@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>REALTY — Find a place that feels like home</title>
+    <meta
+      name="description"
+      content="Discover spaces with perspective. REALTY brings every essential detail into one calm, useful place."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/home.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/home.js" defer></script>
+  </head>
+
+  <!--
+  IMAGES USED ON THIS PAGE (rename to match yours):
+  assets/images/hero-house.jpg
+  assets/images/property-bracken-house.jpg
+  assets/images/property-olive-court.jpg
+  assets/images/property-canton-apartment.jpg
+  assets/images/market-interior.jpg
+-->
+
+  <body data-page="home">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div data-component="site-header"></div>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <p class="eyebrow eyebrow--mark hero__eyebrow">
+              A more considered way to move
+            </p>
+
+            <h1 id="hero-title" class="hero__title">
+              <span class="line" style="--i: 0"><span>Find a</span></span>
+              <span class="line" style="--i: 1"><span>place that</span></span>
+              <span class="line" style="--i: 2"><span>feels like</span></span>
+              <span class="line" style="--i: 3"><span>home.</span></span>
+            </h1>
+
+            <p class="hero__lead">
+              Discover spaces with perspective. REALTY brings every essential
+              detail into one calm, useful place.
+            </p>
+
+            <p class="hero__meta">
+              <span>01 — Discovery desk</span>
+              <span class="hero__rule" aria-hidden="true"></span>
+              <a href="#collection">Scroll to explore</a>
+            </p>
+          </div>
+
+          <div class="hero__media">
+            <img
+              src="assets/images/hero-house.jpg"
+              alt="A stone-clad contemporary house at dusk, set in a landscape of olive trees and tall grasses"
+              fetchpriority="high"
+              data-parallax
+            />
+            <p class="hero__stamp" aria-hidden="true">
+              <span>Selected<br />addresses<br />only</span>
+            </p>
+          </div>
+        </div>
+
+        <form
+          class="search-card"
+          action="buy.html"
+          method="get"
+          role="search"
+          aria-label="Search properties"
+          data-search-form
+        >
+          <div class="search-card__top">
+            <fieldset class="tabs">
+              <legend class="visually-hidden">I want to</legend>
+              <label class="tabs__tab">
+                <input
+                  class="visually-hidden"
+                  type="radio"
+                  name="purpose"
+                  value="buy"
+                  checked
+                />
+                <span>Buy</span>
+              </label>
+              <label class="tabs__tab">
+                <input
+                  class="visually-hidden"
+                  type="radio"
+                  name="purpose"
+                  value="rent"
+                />
+                <span>Rent</span>
+              </label>
+            </fieldset>
+            <p class="search-card__prompt">What are you looking for?</p>
+          </div>
+
+          <div class="search-card__fields">
+            <div class="field field--icon">
+              <label class="field__label" for="s-location">Location</label>
+              <svg class="icon field__icon" aria-hidden="true">
+                <use href="#i-search"></use>
+              </svg>
+              <input
+                class="field__control"
+                id="s-location"
+                name="q"
+                type="text"
+                list="s-locations"
+                placeholder="City, neighbourhood or postcode"
+                autocomplete="off"
+              />
+              <datalist id="s-locations">
+                <option value="Clerkenwell"></option>
+                <option value="Richmond"></option>
+                <option value="Stoke Newington"></option>
+                <option value="West Hove"></option>
+              </datalist>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="s-type">Property type</label>
+              <select class="field__control" id="s-type" name="type">
+                <option value="">Any type</option>
+                <option value="house">House</option>
+                <option value="apartment">Apartment</option>
+                <option value="villa">Villa</option>
+                <option value="townhouse">Townhouse</option>
+                <option value="land">Land</option>
+                <option value="new-build">New build</option>
+                <option value="commercial">Commercial</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="s-price">Price range</label>
+              <select
+                class="field__control"
+                id="s-price"
+                name="price"
+                data-price-select
+              >
+                <option value="">Any price</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="s-beds">Bedrooms</label>
+              <select class="field__control" id="s-beds" name="beds">
+                <option value="">Any</option>
+                <option value="0">Studio</option>
+                <option value="1">1+</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
+                <option value="4">4+</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+
+            <button class="btn btn--dark btn--lg" type="submit">
+              Search homes
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- FEATURED -->
+      <section
+        class="section"
+        id="collection"
+        aria-labelledby="collection-title"
+      >
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <div>
+              <p class="eyebrow eyebrow--mark">The current collection</p>
+              <h2 id="collection-title" class="h2">
+                Homes with a point of view.
+              </h2>
+            </div>
+            <a class="link-arrow" href="buy.html">
+              View all addresses
+              <svg class="icon icon--diag" aria-hidden="true">
+                <use href="#i-arrow-up-right"></use>
+              </svg>
+            </a>
+          </header>
+
+          <div class="property-grid property-grid--scroll" data-reveal-group>
+            <article
+              class="property-card"
+              data-reveal
+              data-property-id="bracken-house"
+              data-property-name="Bracken House"
+            >
+              <a
+                class="property-card__media"
+                href="property.html?id=bracken-house"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <img
+                  src="assets/images/property-bracken-house.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="badge">New to REALTY</span>
+              </a>
+              <div class="property-card__actions">
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-save
+                  aria-pressed="false"
+                  aria-label="Save Bracken House"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-heart"></use>
+                  </svg>
+                </button>
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-compare
+                  aria-pressed="false"
+                  aria-label="Add Bracken House to compare"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-plus"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="property-card__body">
+                <p class="price">$1,295,000</p>
+                <h3 class="property-card__title">
+                  <a href="property.html?id=bracken-house">Bracken House</a>
+                  <span>· Richmond, London</span>
+                </h3>
+                <ul class="property-meta" aria-label="Key details">
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-bed"></use></svg
+                    >4 beds
+                  </li>
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-bath"></use></svg
+                    >3 baths
+                  </li>
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-area"></use></svg
+                    >2,146 sq ft
+                  </li>
+                </ul>
+                <p class="property-card__foot">
+                  <span>Detached house</span><span>Aster &amp; Field</span>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="property-card"
+              data-reveal
+              data-property-id="olive-court"
+              data-property-name="Olive Court"
+            >
+              <a
+                class="property-card__media"
+                href="property.html?id=olive-court"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <img
+                  src="assets/images/property-olive-court.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="badge">Reduced</span>
+              </a>
+              <div class="property-card__actions">
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-save
+                  aria-pressed="false"
+                  aria-label="Save Olive Court"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-heart"></use>
+                  </svg>
+                </button>
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-compare
+                  aria-pressed="false"
+                  aria-label="Add Olive Court to compare"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-plus"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="property-card__body">
+                <p class="price">$875,000</p>
+                <h3 class="property-card__title">
+                  <a href="property.html?id=olive-court">Olive Court</a>
+                  <span>· West Hove, Sussex</span>
+                </h3>
+                <ul class="property-meta" aria-label="Key details">
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-bed"></use></svg
+                    >3 beds
+                  </li>
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-bath"></use></svg
+                    >2 baths
+                  </li>
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-area"></use></svg
+                    >1,504 sq ft
+                  </li>
+                </ul>
+                <p class="property-card__foot">
+                  <span>Villa</span><span>Aster &amp; Field</span>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="property-card"
+              data-reveal
+              data-property-id="the-canton-apartment"
+              data-property-name="The Canton Apartment"
+            >
+              <a
+                class="property-card__media"
+                href="property.html?id=the-canton-apartment"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <img
+                  src="assets/images/property-canton-apartment.jpg"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="badge">Verified listing</span>
+              </a>
+              <div class="property-card__actions">
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-save
+                  aria-pressed="false"
+                  aria-label="Save The Canton Apartment"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-heart"></use>
+                  </svg>
+                </button>
+                <button
+                  class="icon-btn"
+                  type="button"
+                  data-compare
+                  aria-pressed="false"
+                  aria-label="Add The Canton Apartment to compare"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-plus"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="property-card__body">
+                <p class="price">$645,000</p>
+                <h3 class="property-card__title">
+                  <a href="property.html?id=the-canton-apartment"
+                    >The Canton Apartment</a
+                  >
+                  <span>· Clerkenwell, London</span>
+                </h3>
+                <ul class="property-meta" aria-label="Key details">
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-bed"></use></svg
+                    >2 beds
+                  </li>
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-bath"></use></svg
+                    >2 baths
+                  </li>
+                  <li>
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-area"></use></svg
+                    >984 sq ft
+                  </li>
+                </ul>
+                <p class="property-card__foot">
+                  <span>Apartment</span><span>Form &amp; Found</span>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MARKET NOTE -->
+      <section class="market" aria-labelledby="market-title">
+        <div class="market__media">
+          <img
+            src="assets/images/market-interior.jpg"
+            alt="A sunlit living room with black-framed windows, a curved boucle sofa and a green armchair"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="market__content">
+          <p class="eyebrow eyebrow--brand" data-reveal>Market note / 26</p>
+          <h2 id="market-title" class="h2 h2--lg" data-reveal>
+            A better lens on where value lives.
+          </h2>
+          <p class="market__lead" data-reveal>
+            Consider more than bedrooms and boundaries. REALTY brings a
+            property's particulars, local signals, and cost estimates into a
+            single decision-ready view.
+          </p>
+
+          <dl class="market__stats" data-reveal-group>
+            <div data-reveal>
+              <dt>Average short-list</dt>
+              <dd>12 min</dd>
+            </div>
+            <div data-reveal>
+              <dt>Compare at once</dt>
+              <dd>4 homes</dd>
+            </div>
+            <div data-reveal>
+              <dt>Every next step</dt>
+              <dd>1 desk</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- NEIGHBOURHOODS -->
+      <section class="section" aria-labelledby="areas-title">
+        <div class="container split">
+          <div class="split__intro" data-reveal>
+            <p class="eyebrow eyebrow--mark">Explore by character</p>
+            <h2 id="areas-title" class="h2">
+              A neighbourhood is more than a postcode.
+            </h2>
+            <p class="lead">
+              Start with the life you want to live. Then find the address that
+              makes it possible.
+            </p>
+          </div>
+
+          <ol class="area-list" data-reveal-group>
+            <li data-reveal>
+              <a class="area-list__row" href="buy.html?q=Clerkenwell">
+                <span class="area-list__num">01</span>
+                <span class="area-list__name">Clerkenwell</span>
+                <span class="area-list__note"
+                  >Light-filled lofts &amp; thoughtful food</span
+                >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-chevron-right"></use>
+                </svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="area-list__row" href="buy.html?q=Richmond">
+                <span class="area-list__num">02</span>
+                <span class="area-list__name">Richmond</span>
+                <span class="area-list__note"
+                  >River walks &amp; village calm</span
+                >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-chevron-right"></use>
+                </svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="area-list__row" href="buy.html?q=Stoke%20Newington">
+                <span class="area-list__num">03</span>
+                <span class="area-list__name">Stoke Newington</span>
+                <span class="area-list__note"
+                  >Leafy streets &amp; strong local culture</span
+                >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-chevron-right"></use>
+                </svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="area-list__row" href="buy.html?q=West%20Hove">
+                <span class="area-list__num">04</span>
+                <span class="area-list__name">West Hove</span>
+                <span class="area-list__note"
+                  >Sea air &amp; design-forward homes</span
+                >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-chevron-right"></use>
+                </svg>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PROPERTY TYPES -->
+      <section class="section section--surface" aria-labelledby="types-title">
+        <div class="container">
+          <header data-reveal>
+            <p class="eyebrow">Find your form</p>
+            <h2 id="types-title" class="h2">Every kind of space.</h2>
+          </header>
+
+          <ul class="type-grid" data-reveal-group>
+            <li data-reveal>
+              <a class="type-card" href="buy.html?type=house">
+                <svg class="icon icon--brand" aria-hidden="true">
+                  <use href="#i-home"></use>
+                </svg>
+                <h3 class="type-card__title">Houses</h3>
+                <svg
+                  class="icon icon--brand icon--sm icon--diag"
+                  aria-hidden="true"
+                >
+                  <use href="#i-arrow-up-right"></use>
+                </svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="type-card" href="buy.html?type=apartment">
+                <svg class="icon icon--brand" aria-hidden="true">
+                  <use href="#i-building"></use>
+                </svg>
+                <h3 class="type-card__title">Apartments</h3>
+                <svg
+                  class="icon icon--brand icon--sm icon--diag"
+                  aria-hidden="true"
+                >
+                  <use href="#i-arrow-up-right"></use>
+                </svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="type-card" href="buy.html?type=land">
+                <svg class="icon icon--brand" aria-hidden="true">
+                  <use href="#i-land"></use>
+                </svg>
+                <h3 class="type-card__title">Land</h3>
+                <svg
+                  class="icon icon--brand icon--sm icon--diag"
+                  aria-hidden="true"
+                >
+                  <use href="#i-arrow-up-right"></use>
+                </svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a class="type-card" href="buy.html?type=new-build">
+                <svg class="icon icon--brand" aria-hidden="true">
+                  <use href="#i-compass"></use>
+                </svg>
+                <h3 class="type-card__title">New builds</h3>
+                <svg
+                  class="icon icon--brand icon--sm icon--diag"
+                  aria-hidden="true"
+                >
+                  <use href="#i-arrow-up-right"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="section section--dark" aria-labelledby="tools-title">
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <div>
+              <p class="eyebrow eyebrow--brand">Make the numbers feel clear</p>
+              <h2 id="tools-title" class="h2">
+                Practical confidence, built in.
+              </h2>
+            </div>
+            <a class="link-arrow link-arrow--light" href="desk.html#tools">
+              Open your tools
+              <svg class="icon icon--diag" aria-hidden="true">
+                <use href="#i-arrow-up-right"></use>
+              </svg>
+            </a>
+          </header>
+
+          <div class="tool-grid" data-reveal-group>
+            <article class="tool-card" data-reveal>
+              <svg class="icon icon--brand icon--circle" aria-hidden="true">
+                <use href="#i-dollar"></use>
+              </svg>
+              <h3 class="tool-card__title">Mortgage estimate</h3>
+              <p class="tool-card__text">
+                See a clear monthly cost before you fall in love with the
+                details. Adjust deposit, term, and rate in your personal desk.
+              </p>
+              <a class="btn btn--brand" href="mortgage.html">
+                Calculate estimate
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow-right"></use>
+                </svg>
+              </a>
+            </article>
+
+            <article class="tool-card" data-reveal>
+              <svg class="icon icon--brand icon--circle" aria-hidden="true">
+                <use href="#i-sparkle"></use>
+              </svg>
+              <h3 class="tool-card__title">Saved, not scattered.</h3>
+              <p class="tool-card__text">
+                Keep the homes, searches, viewings, and conversations that
+                matter in one private place—ready when you are.
+              </p>
+              <a class="btn btn--outline-light" href="desk.html">
+                Visit My Desk
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow-right"></use>
+                </svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section" id="how-it-works" aria-labelledby="how-title">
+        <div class="container">
+          <header class="steps__head" data-reveal>
+            <p class="eyebrow eyebrow--mark">How REALTY works</p>
+            <h2 id="how-title" class="h2">From first search to front door.</h2>
+          </header>
+
+          <ol class="steps" data-reveal-group>
+            <li class="steps__item" data-reveal>
+              <span class="steps__num">01</span>
+              <h3 class="steps__title">Discover with context</h3>
+              <p class="steps__text">
+                Explore considered collections, set your criteria, and use the
+                map to understand what's around each address.
+              </p>
+            </li>
+            <li class="steps__item" data-reveal>
+              <span class="steps__num">02</span>
+              <h3 class="steps__title">Compare the particulars</h3>
+              <p class="steps__text">
+                Place up to four homes side by side to bring price, space, and
+                practical trade-offs into focus.
+              </p>
+            </li>
+            <li class="steps__item" data-reveal>
+              <span class="steps__num">03</span>
+              <h3 class="steps__title">Move with momentum</h3>
+              <p class="steps__text">
+                Save your shortlist, plan a viewing, and keep essential
+                conversations and financial estimates close at hand.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- AGENTS CTA -->
+      <section
+        class="section section--flush-top"
+        aria-labelledby="agents-title"
+      >
+        <div class="container agent-cta" data-reveal>
+          <div class="split split--wide-left">
+            <div>
+              <p class="eyebrow eyebrow--mark">For agents &amp; agencies</p>
+              <h2 id="agents-title" class="h2 h2--xl">
+                Your listings deserve a clearer stage.
+              </h2>
+            </div>
+            <div class="agent-cta__side">
+              <p class="lead">
+                Manage inventory, enquiries, viewing requests, and your
+                performance from a composed workspace built around the
+                property—not platform noise.
+              </p>
+              <a class="btn btn--dark" href="agent-desk.html">
+                Explore Agent Desk
+                <svg class="icon icon--diag" aria-hidden="true">
+                  <use href="#i-arrow-up-right"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" aria-labelledby="faq-title">
+        <div class="container split">
+          <div class="split__intro" data-reveal>
+            <p class="eyebrow">A few particulars</p>
+            <h2 id="faq-title" class="h2">Questions, answered.</h2>
+          </div>
+
+          <div class="accordion" data-accordion data-reveal>
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-t1"
+                  aria-expanded="false"
+                  aria-controls="faq-p1"
+                >
+                  How does REALTY help me compare properties?
+                  <svg class="icon icon--brand" aria-hidden="true">
+                    <use href="#i-chevron-right"></use>
+                  </svg>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-p1"
+                role="region"
+                aria-labelledby="faq-t1"
+              >
+                <div>
+                  <p>
+                    Add up to four homes to your comparison tray from any
+                    listing. REALTY lines up price, space, price per square
+                    foot, location and estimated monthly cost so the trade-offs
+                    are easy to see.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-t2"
+                  aria-expanded="false"
+                  aria-controls="faq-p2"
+                >
+                  Can I keep track of homes and searches?
+                  <svg class="icon icon--brand" aria-hidden="true">
+                    <use href="#i-chevron-right"></use>
+                  </svg>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-p2"
+                role="region"
+                aria-labelledby="faq-t2"
+              >
+                <div>
+                  <p>
+                    Yes. Save homes, searches and agents to My Desk, and you'll
+                    see price changes, status updates and new matches together
+                    in one private place.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-t3"
+                  aria-expanded="false"
+                  aria-controls="faq-p3"
+                >
+                  Are mortgage figures an approval or a quote?
+                  <svg class="icon icon--brand" aria-hidden="true">
+                    <use href="#i-chevron-right"></use>
+                  </svg>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-p3"
+                role="region"
+                aria-labelledby="faq-t3"
+              >
+                <div>
+                  <p>
+                    Neither. The mortgage estimate is an indication based on the
+                    deposit, term and rate you enter. It is not financial advice
+                    or a lender's offer.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <h3 class="accordion__heading">
+                <button
+                  class="accordion__trigger"
+                  type="button"
+                  id="faq-t4"
+                  aria-expanded="false"
+                  aria-controls="faq-p4"
+                >
+                  How do viewing requests work?
+                  <svg class="icon icon--brand" aria-hidden="true">
+                    <use href="#i-chevron-right"></use>
+                  </svg>
+                </button>
+              </h3>
+              <div
+                class="accordion__panel"
+                id="faq-p4"
+                role="region"
+                aria-labelledby="faq-t4"
+              >
+                <div>
+                  <p>
+                    Choose a date and time from the agent's available slots, add
+                    your details and confirm. The agent confirms or suggests
+                    another time, and the request appears under Viewings in My
+                    Desk.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
