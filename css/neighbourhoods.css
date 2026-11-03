@@ -3,28 +3,6 @@
    Neighbourhoods page only: filter strip · editorial rows
    ========================================================================== */
 
-/* ---------- Filter strip ---------- */
-.hood-filter {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 2.25rem;
-  border-bottom: 1px solid var(--c-line);
-}
-.hood-filter .tabs {
-  gap: 2rem;
-}
-.hood-filter .tabs__tab span {
-  padding-bottom: 1rem;
-  margin-bottom: -1px;
-}
-.hood-filter__hint {
-  padding-bottom: 1rem;
-  font-size: 0.7rem;
-  color: var(--c-ink-muted);
-}
-
 /* ---------- Editorial rows ---------- */
 .hood-list {
   list-style: none;
@@ -162,18 +140,6 @@
   .hood {
     grid-template-columns: 1fr;
     gap: 1.75rem;
-  }
-  .hood-filter {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-  .hood-filter__hint {
-    display: none;
-  }
-  .hood-filter .tabs {
-    gap: 1.5rem;
-    overflow-x: auto;
   }
 }
 @media (max-width: 30em) {
