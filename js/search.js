@@ -147,7 +147,7 @@
           `<label class="seg__item"><input class="visually-hidden" type="radio" name="${name}" value="${v}" data-filter="${key}"><span>${l}</span></label>`,
       )
       .join("")}</div>`;
-  const select = (
+  const selectField = (
     key,
     label,
     opts,
@@ -170,7 +170,7 @@
       <button class="chip chip--filters" type="button" data-open-drawer aria-haspopup="dialog" aria-controls="filter-drawer">
         ${icon("sliders")}<span>Filters</span><span class="chip__count" data-filter-count>00</span>
       </button>
-      ${chip("price", "Any price", `<div class="popover__grid">${select("priceMin", "Minimum", minOpts)}${select("priceMax", "Maximum", maxOpts)}</div>`)}
+      ${chip("price", "Any price", `<div class="popover__grid">${selectField("priceMin", "Minimum", minOpts)}${selectField("priceMax", "Maximum", maxOpts)}</div>`)}
       ${chip("beds", "Any bedrooms", radioList("p-beds", "beds", BEDS))}
       ${chip("types", "Any type", checkList("types", TYPES))}
       ${chip(
@@ -201,14 +201,14 @@
     </div>
     <div class="drawer__body">
       <fieldset class="filter-group"><legend>Price</legend>
-        <div class="popover__grid">${select("priceMin", "Minimum", minOpts)}${select("priceMax", "Maximum", maxOpts)}</div></fieldset>
+        <div class="popover__grid">${selectField("priceMin", "Minimum", minOpts)}${selectField("priceMax", "Maximum", maxOpts)}</div></fieldset>
       <fieldset class="filter-group"><legend>Bedrooms</legend>${seg("d-beds", "beds", BEDS)}</fieldset>
       <fieldset class="filter-group"><legend>Bathrooms</legend>${seg("d-baths", "baths", BATHS)}</fieldset>
       <fieldset class="filter-group"><legend>Property type</legend><div class="option-grid">${checkList("types", TYPES)}</div></fieldset>
       <fieldset class="filter-group"><legend>Features</legend><div class="option-grid">${checkList("features", FEATURES)}</div></fieldset>
       <fieldset class="filter-group"><legend>Listing</legend>
         <label class="option"><input type="checkbox" data-filter="verified"><span>Verified listings only</span></label>
-        ${select("added", "Added", ADDED)}</fieldset>
+        ${selectField("added", "Added", ADDED)}</fieldset>
     </div>
     <div class="drawer__foot">
       <button class="drawer__clear" type="button" data-clear-all>Clear all</button>
