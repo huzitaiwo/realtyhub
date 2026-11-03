@@ -135,6 +135,51 @@
     revealEls.forEach((el) => observer.observe(el));
   }
 
+  /* ---------- Compare tray ---------- */
+  const tray = document.createElement("aside");
+  tray.className = "compare-tray";
+  tray.setAttribute("aria-label", "Comparison tray");
+  tray.inert = true;
+  tray.innerHTML = `
+    <p><strong data-tray-count>0</strong><span data-tray-text>properties selected</span></p>
+    <div class="compare-tray__actions">
+      <a class="btn btn--brand btn--sm" href="compare.html" data-tray-link>Compare</a>
+      <button class="btn btn--outline-light btn--sm" type="button" data-tray-clear>Clear all</button>
+    </div>`;
+  document.body.append(tray);
+
+  const renderTray = () => {
+    const ids = read(KEYS.compare);
+    const n = ids.length;
+    tray.classList.toggle("is-visible", n > 0);
+    tray.inert = n === 0;
+    document.body.classList.toggle("has-tray", n > 0);
+    tray.querySelector("[data-tray-count]").textContent = n;
+    tray.querySelector("[data-tray-text]").textContent =
+      n === 1 ? "property selected — add one more" : "properties selected";
+    const link = tray.querySelector("[data-tray-link]");
+    link.href = `compare.html?ids=${ids.join(",")}`;
+    link.setAttribute("aria-disabled", String(n < 2));
+  };
+
+  tray.querySelector("[data-tray-link]").addEventListener("click", (e) => {
+    if (e.currentTarget.getAttribute("aria-disabled") === "true")
+      e.preventDefault();
+  });
+  tray.querySelector("[data-tray-clear]").addEventListener("click", () => {
+    write(KEYS.compare, []);
+    document.dispatchEvent(
+      new CustomEvent("realty:change", {
+        detail: { key: KEYS.compare, list: [] },
+      }),
+    );
+  });
+  document.addEventListener("realty:change", () => {
+    syncButtons();
+    renderTray();
+  });
+  renderTray();
+
   syncButtons();
   window.RealtyUI = { toast, read, write, KEYS };
 })();

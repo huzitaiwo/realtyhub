@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homes for sale — REALTY</title>
+    <meta
+      name="description"
+      content="Browse the current collection of homes for sale. Filter, compare and explore addresses on the map."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/search.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/search.js" defer></script>
+  </head>
+
+  <!--
+  IMAGES USED ON THIS PAGE:
+  assets/images/property-bracken-house.jpg
+  assets/images/property-olive-court.jpg
+  assets/images/property-canton-apartment.jpg
+  assets/images/property-marlowe-townhouse.jpg
+-->
+
+  <body data-page="buy">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-component="site-header"></div>
+
+    <main id="main" data-search data-purpose="buy">
+      <section class="container search-head" aria-labelledby="results-title">
+        <div class="search-head__row">
+          <div>
+            <p class="eyebrow eyebrow--mark">
+              Homes for sale / London &amp; surrounding
+            </p>
+            <h1 id="results-title" class="search-head__title">
+              The current collection.
+            </h1>
+          </div>
+          <p
+            class="search-head__count"
+            data-result-count
+            data-total="42"
+            aria-live="polite"
+          >
+            42 addresses have been located for your criteria
+          </p>
+        </div>
+
+        <div
+          class="filter-bar"
+          role="toolbar"
+          aria-label="Filter and sort"
+          data-filter-bar
+        ></div>
+      </section>
+
+      <section class="container search-layout" aria-label="Search results">
+        <div class="results">
+          <div class="results__bar">
+            <span>Map + list view</span>
+            <span class="results__hint">Hover a card to locate it</span>
+          </div>
+
+          <ul class="results__list" data-results>
+            <li data-order="0">
+              <article
+                class="property-card property-card--row"
+                data-property-id="bracken-house"
+                data-property-name="Bracken House"
+                data-area="Richmond, London"
+                data-price="1295000"
+                data-beds="4"
+                data-baths="3"
+                data-sqft="2146"
+                data-type="house"
+                data-verified="false"
+                data-added="1"
+                data-reduced="false"
+                data-views="320"
+                data-features="parking garden"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=bracken-house"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/property-bracken-house.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save Bracken House"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">$1,295,000</p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=bracken-house">Bracken House</a>
+                    <span>· Richmond, London</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >4 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >3 baths
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >2,146 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>New to REALTY</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add Bracken House to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li data-order="1">
+              <article
+                class="property-card property-card--row"
+                data-property-id="olive-court"
+                data-property-name="Olive Court"
+                data-area="West Hove, Sussex"
+                data-price="875000"
+                data-beds="3"
+                data-baths="2"
+                data-sqft="1504"
+                data-type="house"
+                data-verified="false"
+                data-added="9"
+                data-reduced="true"
+                data-views="410"
+                data-features="pool garden parking"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=olive-court"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/property-olive-court.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save Olive Court"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">$875,000</p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=olive-court">Olive Court</a>
+                    <span>· West Hove, Sussex</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >3 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >2 baths
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >1,504 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>Reduced</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add Olive Court to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li data-order="2">
+              <article
+                class="property-card property-card--row"
+                data-property-id="the-canton-apartment"
+                data-property-name="The Canton Apartment"
+                data-area="Clerkenwell, London"
+                data-price="645000"
+                data-beds="2"
+                data-baths="2"
+                data-sqft="984"
+                data-type="apartment"
+                data-verified="true"
+                data-added="20"
+                data-reduced="false"
+                data-views="150"
+                data-features="elevator balcony"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=the-canton-apartment"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/property-canton-apartment.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save The Canton Apartment"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">$645,000</p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=the-canton-apartment"
+                      >The Canton Apartment</a
+                    >
+                    <span>· Clerkenwell, London</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >2 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >2 baths
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >984 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>Verified listing</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add The Canton Apartment to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li data-order="3">
+              <article
+                class="property-card property-card--row"
+                data-property-id="marlowe-townhouse"
+                data-property-name="Marlowe Townhouse"
+                data-area="Stoke Newington, London"
+                data-price="1040000"
+                data-beds="4"
+                data-baths="2"
+                data-sqft="1786"
+                data-type="house"
+                data-verified="false"
+                data-added="4"
+                data-reduced="false"
+                data-views="205"
+                data-features="garden"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=marlowe-townhouse"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/property-marlowe-townhouse.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save Marlowe Townhouse"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">$1,040,000</p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=marlowe-townhouse"
+                      >Marlowe Townhouse</a
+                    >
+                    <span>· Stoke Newington, London</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >4 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >2 baths
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >1,786 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>Open viewing</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add Marlowe Townhouse to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <div class="empty-state" data-empty hidden>
+            <h2 class="empty-state__title">No addresses match just yet.</h2>
+            <p>Try widening your price range or removing a filter.</p>
+            <button class="btn btn--dark btn--sm" type="button" data-clear-all>
+              Clear all filters
+            </button>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <div
+            class="map"
+            data-map
+            role="region"
+            aria-label="Map of results (simulated)"
+          >
+            <div class="map__canvas" data-canvas>
+              <span
+                class="map__road"
+                style="--x: -5%; --y: 22%; --w: 75%; --r: 28deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 20%; --y: 58%; --w: 90%; --r: 24deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 40%; --y: -5%; --w: 70%; --r: 62deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: -10%; --y: 78%; --w: 80%; --r: 22deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 55%; --y: 18%; --w: 70%; --r: 26deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 70%; --y: 50%; --w: 60%; --r: 60deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__park"
+                style="--x: 82%; --y: 18%; --s: 22%"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__park"
+                style="--x: 12%; --y: 86%; --s: 28%"
+                aria-hidden="true"
+              ></span>
+
+              <button
+                class="marker"
+                type="button"
+                data-for="bracken-house"
+                style="--x: 24%; --y: 30%"
+                aria-label="Bracken House, $1,295,000"
+              >
+                $1.29m
+              </button>
+              <button
+                class="marker"
+                type="button"
+                data-for="olive-court"
+                style="--x: 65%; --y: 26%"
+                aria-label="Olive Court, $875,000"
+              >
+                $875k
+              </button>
+              <button
+                class="marker"
+                type="button"
+                data-for="the-canton-apartment"
+                style="--x: 46%; --y: 62%"
+                aria-label="The Canton Apartment, $645,000"
+              >
+                $645k
+              </button>
+              <button
+                class="marker"
+                type="button"
+                data-for="marlowe-townhouse"
+                style="--x: 80%; --y: 71%"
+                aria-label="Marlowe Townhouse, $1,040,000"
+              >
+                $1.04m
+              </button>
+            </div>
+
+            <p class="map__label">Address field / approximate area placement</p>
+
+            <div class="map__zoom">
+              <button type="button" data-zoom="1" aria-label="Zoom in">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-plus"></use>
+                </svg>
+              </button>
+              <button type="button" data-zoom="-1" aria-label="Zoom out">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-minus"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="map-popup"
+              data-popup
+              role="dialog"
+              aria-label="Property preview"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
