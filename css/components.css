@@ -731,3 +731,12 @@ select.field__control {
   opacity: 1;
   transform: translate(-50%, 0);
 }
+
+/* ---------- Price unit (rent) ---------- */
+.price__unit {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--c-ink-muted);
+}

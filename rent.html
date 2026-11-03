@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homes to rent — REALTY</title>
+    <meta
+      name="description"
+      content="Browse the current collection of homes to rent. Filter, compare and explore addresses on the map."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/search.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/search.js" defer></script>
+  </head>
+
+  <!--
+  IMAGES USED ON THIS PAGE (rename to match yours):
+  assets/images/rent-harlow-mews.jpg
+  assets/images/rent-linden-house.jpg
+  assets/images/rent-pennant-lofts.jpg
+  assets/images/rent-seawall-terrace.jpg
+-->
+
+  <body data-page="rent">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-component="site-header"></div>
+
+    <main id="main" data-search data-purpose="rent">
+      <section class="container search-head" aria-labelledby="results-title">
+        <div class="search-head__row">
+          <div>
+            <p class="eyebrow eyebrow--mark">
+              Homes to rent / London &amp; surrounding
+            </p>
+            <h1 id="results-title" class="search-head__title">
+              The current collection.
+            </h1>
+          </div>
+          <p
+            class="search-head__count"
+            data-result-count
+            data-total="36"
+            aria-live="polite"
+          >
+            36 addresses have been located for your criteria
+          </p>
+        </div>
+
+        <div
+          class="filter-bar"
+          role="toolbar"
+          aria-label="Filter and sort"
+          data-filter-bar
+        ></div>
+      </section>
+
+      <section class="container search-layout" aria-label="Search results">
+        <div class="results">
+          <div class="results__bar">
+            <span>Map + list view</span>
+            <span class="results__hint">Hover a card to locate it</span>
+          </div>
+
+          <ul class="results__list" data-results>
+            <li data-order="0">
+              <article
+                class="property-card property-card--row"
+                data-property-id="harlow-mews"
+                data-property-name="Harlow Mews"
+                data-area="Clerkenwell, London"
+                data-price="4200"
+                data-beds="2"
+                data-baths="2"
+                data-sqft="1020"
+                data-type="apartment"
+                data-verified="true"
+                data-added="2"
+                data-reduced="false"
+                data-views="260"
+                data-features="furnished elevator"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=harlow-mews"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/rent-harlow-mews.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save Harlow Mews"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">
+                    $4,200 <span class="price__unit">/ month</span>
+                  </p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=harlow-mews">Harlow Mews</a>
+                    <span>· Clerkenwell, London</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >2 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >2 baths
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >1,020 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>Verified listing</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add Harlow Mews to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li data-order="1">
+              <article
+                class="property-card property-card--row"
+                data-property-id="linden-house"
+                data-property-name="Linden House"
+                data-area="Richmond, London"
+                data-price="5800"
+                data-beds="4"
+                data-baths="3"
+                data-sqft="2010"
+                data-type="house"
+                data-verified="false"
+                data-added="5"
+                data-reduced="false"
+                data-views="340"
+                data-features="garden parking pet-friendly"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=linden-house"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/rent-linden-house.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save Linden House"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">
+                    $5,800 <span class="price__unit">/ month</span>
+                  </p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=linden-house">Linden House</a>
+                    <span>· Richmond, London</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >4 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >3 baths
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >2,010 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>Available now</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add Linden House to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li data-order="2">
+              <article
+                class="property-card property-card--row"
+                data-property-id="pennant-lofts"
+                data-property-name="Pennant Lofts"
+                data-area="Stoke Newington, London"
+                data-price="3450"
+                data-beds="2"
+                data-baths="1"
+                data-sqft="880"
+                data-type="apartment"
+                data-verified="false"
+                data-added="12"
+                data-reduced="true"
+                data-views="190"
+                data-features="furnished balcony"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=pennant-lofts"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/rent-pennant-lofts.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save Pennant Lofts"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">
+                    $3,450 <span class="price__unit">/ month</span>
+                  </p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=pennant-lofts">Pennant Lofts</a>
+                    <span>· Stoke Newington, London</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >2 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >1 bath
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >880 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>Reduced</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add Pennant Lofts to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li data-order="3">
+              <article
+                class="property-card property-card--row"
+                data-property-id="seawall-terrace"
+                data-property-name="Seawall Terrace"
+                data-area="West Hove, Sussex"
+                data-price="4950"
+                data-beds="3"
+                data-baths="2"
+                data-sqft="1380"
+                data-type="house"
+                data-verified="true"
+                data-added="20"
+                data-reduced="false"
+                data-views="120"
+                data-features="garden balcony"
+              >
+                <a
+                  class="property-card__media"
+                  href="property.html?id=seawall-terrace"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <img
+                    src="assets/images/rent-seawall-terrace.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </a>
+                <div class="property-card__actions">
+                  <button
+                    class="icon-btn"
+                    type="button"
+                    data-save
+                    aria-pressed="false"
+                    aria-label="Save Seawall Terrace"
+                  >
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-heart"></use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="property-card__body">
+                  <p class="price">
+                    $4,950 <span class="price__unit">/ month</span>
+                  </p>
+                  <h2 class="property-card__title">
+                    <a href="property.html?id=seawall-terrace"
+                      >Seawall Terrace</a
+                    >
+                    <span>· West Hove, Sussex</span>
+                  </h2>
+                  <ul class="property-meta" aria-label="Key details">
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bed"></use></svg
+                      >3 beds
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-bath"></use></svg
+                      >2 baths
+                    </li>
+                    <li>
+                      <svg class="icon" aria-hidden="true">
+                        <use href="#i-area"></use></svg
+                      >1,380 sq ft
+                    </li>
+                  </ul>
+                  <p class="property-card__foot">
+                    <span>Open viewing</span>
+                    <button
+                      class="compare-link"
+                      type="button"
+                      data-compare
+                      aria-pressed="false"
+                      aria-label="Add Seawall Terrace to compare"
+                    >
+                      <span class="compare-link__off">+ Compare</span
+                      ><span class="compare-link__on">Added</span>
+                    </button>
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <div class="empty-state" data-empty hidden>
+            <h2 class="empty-state__title">No addresses match just yet.</h2>
+            <p>Try widening your price range or removing a filter.</p>
+            <button class="btn btn--dark btn--sm" type="button" data-clear-all>
+              Clear all filters
+            </button>
+          </div>
+        </div>
+
+        <div class="map-wrap">
+          <div
+            class="map"
+            data-map
+            role="region"
+            aria-label="Map of results (simulated)"
+          >
+            <div class="map__canvas" data-canvas>
+              <span
+                class="map__road"
+                style="--x: -5%; --y: 22%; --w: 75%; --r: 28deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 20%; --y: 58%; --w: 90%; --r: 24deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 40%; --y: -5%; --w: 70%; --r: 62deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: -10%; --y: 78%; --w: 80%; --r: 22deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 55%; --y: 18%; --w: 70%; --r: 26deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__road"
+                style="--x: 70%; --y: 50%; --w: 60%; --r: 60deg"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__park"
+                style="--x: 82%; --y: 18%; --s: 22%"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="map__park"
+                style="--x: 12%; --y: 86%; --s: 28%"
+                aria-hidden="true"
+              ></span>
+
+              <button
+                class="marker"
+                type="button"
+                data-for="harlow-mews"
+                style="--x: 30%; --y: 34%"
+                aria-label="Harlow Mews, $4,200 per month"
+              >
+                $4.2k
+              </button>
+              <button
+                class="marker"
+                type="button"
+                data-for="linden-house"
+                style="--x: 68%; --y: 24%"
+                aria-label="Linden House, $5,800 per month"
+              >
+                $5.8k
+              </button>
+              <button
+                class="marker"
+                type="button"
+                data-for="pennant-lofts"
+                style="--x: 48%; --y: 64%"
+                aria-label="Pennant Lofts, $3,450 per month"
+              >
+                $3.45k
+              </button>
+              <button
+                class="marker"
+                type="button"
+                data-for="seawall-terrace"
+                style="--x: 80%; --y: 72%"
+                aria-label="Seawall Terrace, $4,950 per month"
+              >
+                $4.95k
+              </button>
+            </div>
+
+            <p class="map__label">Address field / approximate area placement</p>
+
+            <div class="map__zoom">
+              <button type="button" data-zoom="1" aria-label="Zoom in">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-plus"></use>
+                </svg>
+              </button>
+              <button type="button" data-zoom="-1" aria-label="Zoom out">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-minus"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="map-popup"
+              data-popup
+              role="dialog"
+              aria-label="Property preview"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
