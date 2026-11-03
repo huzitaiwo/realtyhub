@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Journal — REALTY</title>
+    <meta
+      name="description"
+      content="Market notes, buying and renting guides, neighbourhood stories and design thinking from the REALTY journal."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/journal.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/journal.js" defer></script>
+  </head>
+
+  <!--
+  IMAGES USED ON THIS PAGE (rename to match yours):
+  assets/images/journal-featured.jpg          (4:3)
+  assets/images/journal-floor-plan.jpg        (3:2)
+  assets/images/journal-clerkenwell-walk.jpg  (3:2)
+  assets/images/journal-renting-well.jpg      (3:2)
+  assets/images/journal-light-stone-oak.jpg   (3:2)
+  assets/images/journal-reading-prices.jpg    (3:2)
+  assets/images/journal-mortgage-estimates.jpg (3:2)
+-->
+
+  <body data-page="journal">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-component="site-header"></div>
+
+    <main id="main">
+      <section class="container page-head" aria-labelledby="page-title">
+        <div class="page-head__row">
+          <div>
+            <p class="eyebrow eyebrow--mark">
+              Journal / Market notes &amp; guides
+            </p>
+            <h1 id="page-title" class="page-head__title">
+              Notes on how we live.
+            </h1>
+          </div>
+          <p class="page-head__aside" data-story-count aria-live="polite">
+            7 stories
+          </p>
+        </div>
+
+        <div class="tab-strip" data-journal-filter>
+          <fieldset class="tabs">
+            <legend class="visually-hidden">Filter stories by topic</legend>
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="topic"
+                value="all"
+                checked
+              /><span>All</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="topic"
+                value="market"
+              /><span>Market</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="topic"
+                value="neighbourhoods"
+              /><span>Neighbourhoods</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="topic"
+                value="guides"
+              /><span>Guides</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="topic"
+                value="design"
+              /><span>Design</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="topic"
+                value="reports"
+              /><span>Reports</span></label
+            >
+          </fieldset>
+          <p class="tab-strip__hint">A new story every week.</p>
+        </div>
+      </section>
+
+      <section class="container journal" aria-label="Stories">
+        <article class="feature-story" data-topic="market" data-reveal>
+          <a
+            class="feature-story__media"
+            href="article.html?id=quieter-market"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/journal-featured.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <div class="feature-story__body">
+            <p class="article-card__meta">
+              <span>Market</span><span aria-hidden="true">·</span
+              ><time datetime="2026-11-03">3 Nov 2026</time>
+            </p>
+            <h2 class="feature-story__title">
+              <a href="article.html?id=quieter-market"
+                >What a quieter market asks of buyers.</a
+              >
+            </h2>
+            <p class="feature-story__excerpt">
+              Fewer rushed decisions and more room to compare. How to use a
+              calmer season to find an address that genuinely fits.
+            </p>
+            <div class="feature-story__foot">
+              <span>6 min read</span>
+              <a
+                class="btn btn--dark btn--sm"
+                href="article.html?id=quieter-market"
+                >Read the story
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow-right"></use></svg
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <div class="article-grid" data-reveal-group>
+          <article class="article-card" data-topic="guides" data-reveal>
+            <a
+              class="article-card__media"
+              href="article.html?id=reading-a-floor-plan"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/journal-floor-plan.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="article-card__body">
+              <p class="article-card__meta">
+                <span>Guides</span><span aria-hidden="true">·</span
+                ><time datetime="2026-10-28">28 Oct 2026</time>
+              </p>
+              <h2 class="article-card__title">
+                <a href="article.html?id=reading-a-floor-plan"
+                  >Reading a floor plan before you visit</a
+                >
+              </h2>
+              <p class="article-card__excerpt">
+                What the lines, doors and proportions can tell you before you
+                ever step inside.
+              </p>
+              <p class="article-card__foot">
+                <span>4 min read</span
+                ><span class="article-card__more"
+                  >Read
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></span>
+              </p>
+            </div>
+          </article>
+
+          <article class="article-card" data-topic="neighbourhoods" data-reveal>
+            <a
+              class="article-card__media"
+              href="article.html?id=clerkenwell-walk"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/journal-clerkenwell-walk.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="article-card__body">
+              <p class="article-card__meta">
+                <span>Neighbourhoods</span><span aria-hidden="true">·</span
+                ><time datetime="2026-10-21">21 Oct 2026</time>
+              </p>
+              <h2 class="article-card__title">
+                <a href="article.html?id=clerkenwell-walk"
+                  >A walk through Clerkenwell's lofts and side streets</a
+                >
+              </h2>
+              <p class="article-card__excerpt">
+                Converted warehouses, quiet courtyards and where to stop for
+                lunch along the way.
+              </p>
+              <p class="article-card__foot">
+                <span>5 min read</span
+                ><span class="article-card__more"
+                  >Read
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></span>
+              </p>
+            </div>
+          </article>
+
+          <article class="article-card" data-topic="guides" data-reveal>
+            <a
+              class="article-card__media"
+              href="article.html?id=renting-well"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/journal-renting-well.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="article-card__body">
+              <p class="article-card__meta">
+                <span>Guides</span><span aria-hidden="true">·</span
+                ><time datetime="2026-10-14">14 Oct 2026</time>
+              </p>
+              <h2 class="article-card__title">
+                <a href="article.html?id=renting-well"
+                  >Renting well: what to ask before you sign</a
+                >
+              </h2>
+              <p class="article-card__excerpt">
+                A short list of practical questions that make the first month
+                calmer.
+              </p>
+              <p class="article-card__foot">
+                <span>5 min read</span
+                ><span class="article-card__more"
+                  >Read
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></span>
+              </p>
+            </div>
+          </article>
+
+          <article class="article-card" data-topic="design" data-reveal>
+            <a
+              class="article-card__media"
+              href="article.html?id=light-stone-oak"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/journal-light-stone-oak.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="article-card__body">
+              <p class="article-card__meta">
+                <span>Design</span><span aria-hidden="true">·</span
+                ><time datetime="2026-10-07">7 Oct 2026</time>
+              </p>
+              <h2 class="article-card__title">
+                <a href="article.html?id=light-stone-oak"
+                  >Light, stone and oak: homes that age gracefully</a
+                >
+              </h2>
+              <p class="article-card__excerpt">
+                Why honest materials and good daylight outlast every passing
+                trend.
+              </p>
+              <p class="article-card__foot">
+                <span>4 min read</span
+                ><span class="article-card__more"
+                  >Read
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></span>
+              </p>
+            </div>
+          </article>
+
+          <article class="article-card" data-topic="reports" data-reveal>
+            <a
+              class="article-card__media"
+              href="article.html?id=reading-asking-prices"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/journal-reading-prices.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="article-card__body">
+              <p class="article-card__meta">
+                <span>Reports</span><span aria-hidden="true">·</span
+                ><time datetime="2026-09-30">30 Sep 2026</time>
+              </p>
+              <h2 class="article-card__title">
+                <a href="article.html?id=reading-asking-prices"
+                  >Market report: how to read an asking price</a
+                >
+              </h2>
+              <p class="article-card__excerpt">
+                What an asking price signals, what it leaves out, and how to
+                compare like with like.
+              </p>
+              <p class="article-card__foot">
+                <span>7 min read</span
+                ><span class="article-card__more"
+                  >Read
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></span>
+              </p>
+            </div>
+          </article>
+
+          <article class="article-card" data-topic="market" data-reveal>
+            <a
+              class="article-card__media"
+              href="article.html?id=mortgage-estimates-explained"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/journal-mortgage-estimates.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="article-card__body">
+              <p class="article-card__meta">
+                <span>Market</span><span aria-hidden="true">·</span
+                ><time datetime="2026-09-23">23 Sep 2026</time>
+              </p>
+              <h2 class="article-card__title">
+                <a href="article.html?id=mortgage-estimates-explained"
+                  >Mortgage estimates, explained</a
+                >
+              </h2>
+              <p class="article-card__excerpt">
+                What deposit, term and rate do to a monthly figure, and why an
+                estimate is not an offer.
+              </p>
+              <p class="article-card__foot">
+                <span>3 min read</span
+                ><span class="article-card__more"
+                  >Read
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--dark" aria-labelledby="news-title">
+        <div class="container split split--wide-left">
+          <div data-reveal>
+            <p class="eyebrow eyebrow--brand">The monthly letter</p>
+            <h2 id="news-title" class="h2 h2--lg">
+              Notes from the desk, once a month.
+            </h2>
+          </div>
+          <div class="split__side" data-reveal>
+            <p class="lead">
+              One considered email with new stories, neighbourhood picks and
+              market notes. No noise.
+            </p>
+            <form class="newsletter" data-newsletter novalidate>
+              <label class="visually-hidden" for="news-email"
+                >Email address</label
+              >
+              <input
+                class="newsletter__input"
+                id="news-email"
+                name="email"
+                type="email"
+                placeholder="Your email address"
+                autocomplete="email"
+                required
+              />
+              <button class="btn btn--brand" type="submit">
+                Subscribe
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow-right"></use>
+                </svg>
+              </button>
+            </form>
+            <p
+              class="newsletter__msg"
+              data-newsletter-msg
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
