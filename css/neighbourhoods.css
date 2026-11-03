@@ -1,0 +1,183 @@
+/* ==========================================================================
+   REALTY — css/neighbourhoods.css
+   Neighbourhoods page only: filter strip · editorial rows
+   ========================================================================== */
+
+/* ---------- Filter strip ---------- */
+.hood-filter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.25rem;
+  border-bottom: 1px solid var(--c-line);
+}
+.hood-filter .tabs {
+  gap: 2rem;
+}
+.hood-filter .tabs__tab span {
+  padding-bottom: 1rem;
+  margin-bottom: -1px;
+}
+.hood-filter__hint {
+  padding-bottom: 1rem;
+  font-size: 0.7rem;
+  color: var(--c-ink-muted);
+}
+
+/* ---------- Editorial rows ---------- */
+.hood-list {
+  list-style: none;
+  padding: 0;
+}
+.hood {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--c-line);
+}
+.hood[hidden] {
+  display: none;
+}
+@media (min-width: 56.3125em) {
+  .hood.is-flipped {
+    grid-template-columns: 5fr 7fr;
+  }
+  .hood.is-flipped .hood__media {
+    order: 2;
+  }
+}
+
+.hood__media {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--c-surface-hover);
+}
+.hood__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease);
+}
+.hood:hover .hood__media img {
+  transform: scale(1.04);
+}
+.hood__media .badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+}
+
+.hood__num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--c-brand);
+}
+.hood__name {
+  margin-top: 0.9rem;
+  font-size: var(--fs-h2-lg);
+}
+.hood__tagline {
+  margin-top: 0.9rem;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+.hood__text {
+  max-width: 30rem;
+  margin-top: 1.25rem;
+  line-height: 1.75;
+  color: var(--c-ink-soft);
+}
+
+.hood__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hood__tags li {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--c-line);
+  font-size: 0.65rem;
+  font-weight: 700;
+  transition:
+    border-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+.hood:hover .hood__tags li {
+  border-color: var(--c-ink-muted);
+}
+
+.hood__stats {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 1.25rem 2.5rem;
+  margin: 1.75rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--c-line);
+}
+.hood__stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.3rem;
+}
+.hood__stats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.hood__stats dt {
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+.hood__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+  margin-top: 1.75rem;
+}
+
+.hood-note {
+  padding-block: 1.5rem 0.5rem;
+  font-size: 0.7rem;
+  color: var(--c-ink-muted);
+}
+
+@media (max-width: 56.25em) {
+  .hood {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .hood-filter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .hood-filter__hint {
+    display: none;
+  }
+  .hood-filter .tabs {
+    gap: 1.5rem;
+    overflow-x: auto;
+  }
+}
+@media (max-width: 30em) {
+  .hood__stats {
+    grid-template-columns: repeat(2, auto);
+  }
+}

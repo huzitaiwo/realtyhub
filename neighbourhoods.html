@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neighbourhoods — REALTY</title>
+    <meta
+      name="description"
+      content="Explore neighbourhoods by character. Start with the life you want to live, then find the address that makes it possible."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/neighbourhoods.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/neighbourhoods.js" defer></script>
+  </head>
+
+  <!--
+  IMAGES USED ON THIS PAGE (rename to match yours):
+  assets/images/area-clerkenwell.jpg
+  assets/images/area-richmond.jpg
+  assets/images/area-stoke-newington.jpg
+  assets/images/area-west-hove.jpg
+-->
+
+  <body data-page="neighbourhoods">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-component="site-header"></div>
+
+    <main id="main">
+      <section class="container page-head" aria-labelledby="page-title">
+        <div class="page-head__row">
+          <div>
+            <p class="eyebrow eyebrow--mark">Explore by character</p>
+            <h1 id="page-title" class="page-head__title">
+              A neighbourhood is more than a postcode.
+            </h1>
+          </div>
+          <p class="page-head__aside" data-hood-count aria-live="polite">
+            4 neighbourhoods to explore
+          </p>
+        </div>
+
+        <div class="hood-filter" data-hood-filter>
+          <fieldset class="tabs">
+            <legend class="visually-hidden">
+              Filter neighbourhoods by setting
+            </legend>
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="kind"
+                value="all"
+                checked
+              /><span>All</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="kind"
+                value="city"
+              /><span>City</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="kind"
+                value="village"
+              /><span>Village</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="kind"
+                value="coast"
+              /><span>Coast</span></label
+            >
+          </fieldset>
+          <p class="hood-filter__hint">Start with the life you want to live.</p>
+        </div>
+      </section>
+
+      <section class="container" aria-label="Neighbourhoods">
+        <ol class="hood-list" data-hood-list>
+          <li class="hood" data-kind="city" data-reveal>
+            <figure class="hood__media">
+              <img
+                src="assets/images/area-clerkenwell.jpg"
+                alt="A converted warehouse street with tall arched windows"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="badge">City</figcaption>
+            </figure>
+            <div class="hood__body">
+              <span class="hood__num">01</span>
+              <h2 class="hood__name">Clerkenwell</h2>
+              <p class="hood__tagline">
+                Light-filled lofts &amp; thoughtful food
+              </p>
+              <p class="hood__text">
+                Converted warehouses, tall windows and a good table around most
+                corners. A neighbourhood for people who like a home with a past
+                and a point of view.
+              </p>
+              <ul class="hood__tags" aria-label="Character">
+                <li>Lofts</li>
+                <li>Independent food</li>
+                <li>Design studios</li>
+              </ul>
+              <dl class="hood__stats">
+                <div>
+                  <dt>For sale</dt>
+                  <dd>14</dd>
+                </div>
+                <div>
+                  <dt>To rent</dt>
+                  <dd>9</dd>
+                </div>
+                <div>
+                  <dt>Typical asking</dt>
+                  <dd>$645k</dd>
+                </div>
+              </dl>
+              <div class="hood__actions">
+                <a class="btn btn--dark btn--sm" href="buy.html?q=Clerkenwell"
+                  >Homes for sale
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></a>
+                <a class="link-arrow" href="rent.html?q=Clerkenwell"
+                  >Homes to rent
+                  <svg class="icon icon--diag" aria-hidden="true">
+                    <use href="#i-arrow-up-right"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
+
+          <li class="hood is-flipped" data-kind="village" data-reveal>
+            <figure class="hood__media">
+              <img
+                src="assets/images/area-richmond.jpg"
+                alt="A quiet riverside path lined with mature trees"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="badge">Village</figcaption>
+            </figure>
+            <div class="hood__body">
+              <span class="hood__num">02</span>
+              <h2 class="hood__name">Richmond</h2>
+              <p class="hood__tagline">River walks &amp; village calm</p>
+              <p class="hood__text">
+                Green edges, generous gardens and a slower weekend rhythm. Best
+                for those who want space to breathe without leaving the city
+                behind.
+              </p>
+              <ul class="hood__tags" aria-label="Character">
+                <li>River walks</li>
+                <li>Village centre</li>
+                <li>Family homes</li>
+              </ul>
+              <dl class="hood__stats">
+                <div>
+                  <dt>For sale</dt>
+                  <dd>11</dd>
+                </div>
+                <div>
+                  <dt>To rent</dt>
+                  <dd>6</dd>
+                </div>
+                <div>
+                  <dt>Typical asking</dt>
+                  <dd>$1.29m</dd>
+                </div>
+              </dl>
+              <div class="hood__actions">
+                <a class="btn btn--dark btn--sm" href="buy.html?q=Richmond"
+                  >Homes for sale
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></a>
+                <a class="link-arrow" href="rent.html?q=Richmond"
+                  >Homes to rent
+                  <svg class="icon icon--diag" aria-hidden="true">
+                    <use href="#i-arrow-up-right"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
+
+          <li class="hood" data-kind="city" data-reveal>
+            <figure class="hood__media">
+              <img
+                src="assets/images/area-stoke-newington.jpg"
+                alt="A leafy terrace of brick townhouses"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="badge">City</figcaption>
+            </figure>
+            <div class="hood__body">
+              <span class="hood__num">03</span>
+              <h2 class="hood__name">Stoke Newington</h2>
+              <p class="hood__tagline">
+                Leafy streets &amp; strong local culture
+              </p>
+              <p class="hood__text">
+                Brick townhouses, tree-lined streets and a high street full of
+                regulars. A neighbourhood with a real sense of who lives there.
+              </p>
+              <ul class="hood__tags" aria-label="Character">
+                <li>Leafy streets</li>
+                <li>Local markets</li>
+                <li>Townhouses</li>
+              </ul>
+              <dl class="hood__stats">
+                <div>
+                  <dt>For sale</dt>
+                  <dd>9</dd>
+                </div>
+                <div>
+                  <dt>To rent</dt>
+                  <dd>12</dd>
+                </div>
+                <div>
+                  <dt>Typical asking</dt>
+                  <dd>$1.04m</dd>
+                </div>
+              </dl>
+              <div class="hood__actions">
+                <a
+                  class="btn btn--dark btn--sm"
+                  href="buy.html?q=Stoke%20Newington"
+                  >Homes for sale
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></a>
+                <a class="link-arrow" href="rent.html?q=Stoke%20Newington"
+                  >Homes to rent
+                  <svg class="icon icon--diag" aria-hidden="true">
+                    <use href="#i-arrow-up-right"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
+
+          <li class="hood is-flipped" data-kind="coast" data-reveal>
+            <figure class="hood__media">
+              <img
+                src="assets/images/area-west-hove.jpg"
+                alt="A pale seafront terrace under a wide sky"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="badge">Coast</figcaption>
+            </figure>
+            <div class="hood__body">
+              <span class="hood__num">04</span>
+              <h2 class="hood__name">West Hove</h2>
+              <p class="hood__tagline">Sea air &amp; design-forward homes</p>
+              <p class="hood__text">
+                Wide skies, bright interiors and architecture with a confident
+                sense of design. For those who want the coast as part of
+                everyday life.
+              </p>
+              <ul class="hood__tags" aria-label="Character">
+                <li>Sea air</li>
+                <li>Seafront</li>
+                <li>Modern villas</li>
+              </ul>
+              <dl class="hood__stats">
+                <div>
+                  <dt>For sale</dt>
+                  <dd>8</dd>
+                </div>
+                <div>
+                  <dt>To rent</dt>
+                  <dd>5</dd>
+                </div>
+                <div>
+                  <dt>Typical asking</dt>
+                  <dd>$875k</dd>
+                </div>
+              </dl>
+              <div class="hood__actions">
+                <a class="btn btn--dark btn--sm" href="buy.html?q=West%20Hove"
+                  >Homes for sale
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-arrow-right"></use></svg
+                ></a>
+                <a class="link-arrow" href="rent.html?q=West%20Hove"
+                  >Homes to rent
+                  <svg class="icon icon--diag" aria-hidden="true">
+                    <use href="#i-arrow-up-right"></use></svg
+                ></a>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <p class="hood-note">Figures shown here are representative demos.</p>
+      </section>
+
+      <section class="section section--dark" aria-labelledby="hoods-cta-title">
+        <div class="container split split--wide-left">
+          <div data-reveal>
+            <p class="eyebrow eyebrow--brand">Not sure where to start?</p>
+            <h2 id="hoods-cta-title" class="h2 h2--lg">
+              Tell us how you live. We'll narrow the map.
+            </h2>
+          </div>
+          <div class="split__side" data-reveal>
+            <p class="lead">
+              Start with a search, save the addresses that feel right, and
+              compare them side by side in My Desk.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn--brand" href="buy.html"
+                >Search homes
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow-right"></use></svg
+              ></a>
+              <a class="btn btn--outline-light" href="desk.html"
+                >Visit My Desk
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-arrow-right"></use></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
