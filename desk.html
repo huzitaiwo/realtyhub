@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Desk — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+  </head>
+
+  <!--
+  IMAGES USED ON THIS PAGE (already in your project):
+  assets/images/property-bracken-house.jpg
+  assets/images/property-olive-court.jpg
+  assets/images/property-canton-apartment.jpg
+-->
+
+  <body class="desk" data-page="desk" data-desk="overview">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk</p>
+            <h1 class="desk-head__title" data-greeting>
+              Good morning, Handsome.
+            </h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <section aria-label="Summary">
+          <dl class="stat-band" data-reveal-group>
+            <div class="stat" data-reveal>
+              <dt>Saved homes</dt>
+              <dd class="stat__value">08</dd>
+              <dd class="stat__note">2 new changes</dd>
+            </div>
+            <div class="stat" data-reveal>
+              <dt>Saved searches</dt>
+              <dd class="stat__value">03</dd>
+              <dd class="stat__note">All alerts on</dd>
+            </div>
+            <div class="stat" data-reveal>
+              <dt>Upcoming viewings</dt>
+              <dd class="stat__value">02</dd>
+              <dd class="stat__note">This week</dd>
+            </div>
+            <div class="stat" data-reveal>
+              <dt>Active comparisons</dt>
+              <dd class="stat__value">01</dd>
+              <dd class="stat__note">4 homes shortlisted</dd>
+            </div>
+          </dl>
+        </section>
+
+        <div class="desk-grid" data-reveal-group>
+          <!-- Saved addresses -->
+          <section class="panel" aria-labelledby="saved-title" data-reveal>
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Your collection</p>
+                <h2 class="panel__title" id="saved-title">Saved addresses</h2>
+              </div>
+              <a class="link-arrow" href="saved-properties.html">Browse all</a>
+            </header>
+
+            <ul class="saved-list">
+              <li>
+                <a class="saved-row" href="property.html?id=bracken-house">
+                  <img
+                    src="assets/images/property-bracken-house.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="saved-row__info"
+                    ><strong>Bracken House</strong
+                    ><span>Richmond, London · 4 beds</span></span
+                  >
+                  <span class="saved-row__price">$1,295,000</span>
+                </a>
+              </li>
+              <li>
+                <a class="saved-row" href="property.html?id=olive-court">
+                  <img
+                    src="assets/images/property-olive-court.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="saved-row__info"
+                    ><strong>Olive Court</strong
+                    ><span>West Hove, Sussex · 3 beds</span></span
+                  >
+                  <span class="saved-row__price">$875,000</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="saved-row"
+                  href="property.html?id=the-canton-apartment"
+                >
+                  <img
+                    src="assets/images/property-canton-apartment.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="saved-row__info"
+                    ><strong>The Canton Apartment</strong
+                    ><span>Clerkenwell, London · 2 beds</span></span
+                  >
+                  <span class="saved-row__price">$645,000</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Recent signals -->
+          <section class="panel" aria-labelledby="signals-title" data-reveal>
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Recent signals</p>
+                <h2 class="panel__title" id="signals-title">What changed</h2>
+              </div>
+              <a
+                class="icon-btn"
+                href="notifications.html"
+                aria-label="Open notifications"
+              >
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-bell"></use>
+                </svg>
+              </a>
+            </header>
+
+            <ol class="signal-list">
+              <li class="signal">
+                <span class="bullet-mark" aria-hidden="true"></span>
+                <p class="signal__title">A price was adjusted</p>
+                <time class="signal__time">Today</time>
+                <p class="signal__text">
+                  Olive Court is now shown at $875,000 in this demo collection.
+                </p>
+              </li>
+              <li class="signal">
+                <span class="bullet-mark" aria-hidden="true"></span>
+                <p class="signal__title">Viewing reminder</p>
+                <time class="signal__time">Yesterday</time>
+                <p class="signal__text">
+                  Your representative viewing request is pencilled for Thursday.
+                </p>
+              </li>
+              <li class="signal">
+                <span class="bullet-mark" aria-hidden="true"></span>
+                <p class="signal__title">A home was saved</p>
+                <time class="signal__time">Mon</time>
+                <p class="signal__text">
+                  Bracken House joined your saved property desk.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <!-- Mortgage estimate -->
+          <section class="panel" aria-labelledby="mortgage-title" data-reveal>
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Costs at a glance</p>
+                <h2 class="panel__title" id="mortgage-title">
+                  Mortgage estimate
+                </h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-calculator"></use>
+              </svg>
+            </header>
+
+            <form class="calc" data-calc novalidate>
+              <div class="calc__fields">
+                <label class="calc__field">
+                  <span class="field__label">Property price</span>
+                  <input
+                    class="calc__input"
+                    name="price"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1000"
+                    value="875000"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Deposit</span>
+                  <input
+                    class="calc__input"
+                    name="deposit"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1000"
+                    value="175000"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Interest rate %</span>
+                  <input
+                    class="calc__input"
+                    name="rate"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    max="30"
+                    step="0.1"
+                    value="4.5"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Loan term / years</span>
+                  <input
+                    class="calc__input"
+                    name="years"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    max="40"
+                    step="1"
+                    value="25"
+                  />
+                </label>
+              </div>
+
+              <div class="calc__result">
+                <p class="calc__label">Estimated monthly payment</p>
+                <output class="calc__amount" data-calc-output aria-live="polite"
+                  >$3,891</output
+                >
+                <p class="calc__note">
+                  Based on a representative repayment calculation. Estimates
+                  only, not financial advice.
+                </p>
+              </div>
+            </form>
+          </section>
+
+          <!-- Viewing plan -->
+          <section class="panel" aria-labelledby="plan-title" data-reveal>
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Your next steps</p>
+                <h2 class="panel__title" id="plan-title">Viewing plan</h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-home"></use>
+              </svg>
+            </header>
+
+            <ul class="step-list">
+              <li>
+                <a class="step-row" href="viewings.html#olive-court">
+                  <span class="bullet-mark" aria-hidden="true"></span>
+                  <span class="step-row__info"
+                    ><strong>Olive Court · appointment held</strong
+                    ><span>Thursday, 14:30 · West Hove, Sussex</span></span
+                  >
+                  <svg class="icon icon--sm" aria-hidden="true">
+                    <use href="#i-chevron-right"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="step-row" href="viewings.html#marlowe-townhouse">
+                  <span class="bullet-mark" aria-hidden="true"></span>
+                  <span class="step-row__info"
+                    ><strong>Marlowe Townhouse · awaiting confirmation</strong
+                    ><span
+                      >Choose a preferred time from the agent schedule.</span
+                    ></span
+                  >
+                  <svg class="icon icon--sm" aria-hidden="true">
+                    <use href="#i-chevron-right"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <a class="btn btn--dark" href="viewings.html"
+              >Manage viewing requests</a
+            >
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,518 @@
+/* ==========================================================================
+   REALTY — css/desk.css
+   Shared by every My Desk page: shell · sidebar · mobile top bar · user chip ·
+   page head · stat band · panels · list rows · mortgage estimate
+   ========================================================================== */
+
+/* ---------- Shell ---------- */
+.desk-shell {
+  display: grid;
+  grid-template-columns: 16rem minmax(0, 1fr);
+  min-height: 100vh;
+}
+.desk-main {
+  min-width: 0;
+  padding: 2.25rem 3.5rem 4rem;
+}
+
+/* ---------- Sidebar ---------- */
+.desk-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1.75rem 1rem 1.5rem;
+  background: var(--c-dark-deep);
+  color: var(--c-on-dark);
+  overflow-y: auto;
+}
+.desk-sidebar .logo {
+  margin: 0 0 2.5rem 0.6rem;
+}
+
+.desk-nav {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.desk-nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c-on-dark-soft);
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease),
+    padding 0.35s var(--ease);
+}
+.desk-nav a .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  stroke-width: 1.5;
+}
+.desk-nav a:hover {
+  background: rgba(244, 240, 231, 0.06);
+  color: #fff;
+  padding-left: 1.1rem;
+}
+.desk-nav a[aria-current="page"] {
+  background: rgba(244, 240, 231, 0.13);
+  color: #fff;
+  padding-left: 0.9rem;
+}
+.desk-nav a[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--c-brand);
+}
+.desk-nav--foot {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-dark-line);
+}
+
+/* ---------- Mobile top bar + drawer ---------- */
+.desk-topbar {
+  display: none;
+}
+.desk-scrim {
+  position: fixed;
+  inset: var(--header-h) 0 0 0;
+  z-index: 57;
+  background: rgba(20, 35, 31, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s var(--ease),
+    visibility 0s linear 0.35s;
+}
+.desk-scrim.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+@media (max-width: 56.25em) {
+  .desk-shell {
+    display: block;
+  }
+  .desk-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+    padding-inline: var(--gutter);
+    background: var(--c-bg);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .desk-topbar .burger {
+    display: block;
+  }
+  .desk-sidebar {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    bottom: 0;
+    z-index: 58;
+    width: min(18rem, 86vw);
+    height: auto;
+    padding-top: 1.25rem;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition:
+      transform 0.5s var(--ease),
+      visibility 0s linear 0.5s;
+  }
+  .desk-sidebar.is-open {
+    transform: none;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  .desk-sidebar .logo {
+    display: none;
+  }
+  .desk-main {
+    padding: 1.75rem var(--gutter) 3rem;
+  }
+}
+
+/* ---------- Page head ---------- */
+.desk-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.75rem;
+}
+.desk-head .eyebrow {
+  margin-bottom: 1rem;
+}
+.desk-head__title {
+  font-size: clamp(2.5rem, 4.2vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+}
+.user-chip__avatar {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--c-brand);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+.user-chip__text {
+  display: grid;
+  line-height: 1.35;
+}
+.user-chip__text strong {
+  font-size: 0.72rem;
+}
+.user-chip__text span {
+  font-size: 0.62rem;
+  color: var(--c-ink-muted);
+}
+
+@media (max-width: 56.25em) {
+  .user-chip {
+    padding: 0.45rem;
+  }
+  .user-chip__text {
+    display: none;
+  }
+}
+
+/* ---------- Stat band ---------- */
+.stat-band {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  border-block: 1px solid var(--c-line);
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.5rem;
+}
+.stat + .stat {
+  border-left: 1px solid var(--c-line);
+}
+.stat dt {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+.stat dd {
+  margin: 0;
+}
+.stat__value {
+  margin-top: 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 3.4vw, 3.1rem);
+  line-height: 1;
+}
+.stat__note {
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--c-success);
+}
+
+@media (max-width: 56.25em) {
+  .stat-band {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stat:nth-child(odd) {
+    border-left: 0;
+  }
+  .stat:nth-child(n + 3) {
+    border-top: 1px solid var(--c-line);
+  }
+}
+
+/* ---------- Panels ---------- */
+.desk-grid {
+  display: grid;
+  grid-template-columns: 11fr 9fr;
+  gap: 1.1rem;
+  margin-top: 1.75rem;
+}
+@media (max-width: 70em) {
+  .desk-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  padding: 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+}
+.panel__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.panel__kicker {
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.panel__title {
+  font-size: 1.9rem;
+  line-height: 1.05;
+}
+.panel__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+}
+
+/* Orange mark bullet */
+.bullet-mark {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  flex: none;
+  background: var(--c-brand);
+  -webkit-mask: var(--mark) center / contain no-repeat;
+  mask: var(--mark) center / contain no-repeat;
+}
+
+/* ---------- Saved list ---------- */
+.saved-list,
+.signal-list,
+.step-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--c-line);
+}
+.saved-list li,
+.step-list li {
+  border-bottom: 1px solid var(--c-line);
+}
+.saved-list li:last-child,
+.step-list li:last-child {
+  border-bottom: 0;
+}
+
+.saved-row {
+  display: grid;
+  grid-template-columns: 4.8rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  transition:
+    padding 0.4s var(--ease),
+    background-color 0.3s var(--ease);
+}
+.saved-row:hover {
+  padding-inline: 0.5rem;
+  background: var(--c-bg);
+}
+.saved-row img {
+  width: 4.8rem;
+  height: 3.4rem;
+  object-fit: cover;
+}
+.saved-row__info {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+  font-size: 0.66rem;
+  color: var(--c-ink-muted);
+}
+.saved-row__info strong {
+  font-size: 0.78rem;
+  color: var(--c-ink);
+}
+.saved-row__price {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+/* ---------- Signals ---------- */
+.signal {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "mark title time" ". text text";
+  column-gap: 0.7rem;
+  row-gap: 0.25rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--c-line);
+}
+.signal:last-child {
+  border-bottom: 0;
+}
+.signal .bullet-mark {
+  grid-area: mark;
+  margin-top: 0.3rem;
+}
+.signal__title {
+  grid-area: title;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+.signal__time {
+  grid-area: time;
+  font-size: 0.62rem;
+  color: var(--c-ink-muted);
+}
+.signal__text {
+  grid-area: text;
+  font-size: 0.66rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+
+/* ---------- Step list ---------- */
+.step-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 0;
+  transition:
+    padding 0.4s var(--ease),
+    background-color 0.3s var(--ease);
+}
+.step-row:hover {
+  padding-inline: 0.5rem;
+  background: var(--c-bg);
+}
+.step-row__info {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.66rem;
+  color: var(--c-ink-muted);
+}
+.step-row__info strong {
+  font-size: 0.74rem;
+  color: var(--c-ink);
+}
+.step-row .icon {
+  transition: transform 0.35s var(--ease);
+}
+.step-row:hover .icon {
+  transform: translateX(3px);
+}
+.step-list + .btn {
+  margin-top: 1.5rem;
+}
+
+/* ---------- Mortgage estimate ---------- */
+.calc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.calc__fields {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+.calc__field {
+  display: grid;
+  gap: 0.4rem;
+}
+.calc__input {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--c-line);
+  background: var(--c-bg);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--c-ink-soft);
+  transition:
+    border-color 0.3s var(--ease),
+    background-color 0.3s var(--ease);
+  -moz-appearance: textfield;
+}
+.calc__input::-webkit-outer-spin-button,
+.calc__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.calc__input:hover {
+  border-color: var(--c-ink-muted);
+}
+.calc__input:focus-visible {
+  outline: none;
+  border-color: var(--c-brand);
+  background: var(--c-surface);
+  color: var(--c-ink);
+}
+
+.calc__result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 16rem;
+  padding: 1.5rem;
+  background: var(--c-dark);
+  color: var(--c-on-dark);
+}
+.calc__label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.calc__amount {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 3.6vw, 3.4rem);
+  line-height: 1;
+}
+.calc__note {
+  font-size: 0.66rem;
+  line-height: 1.6;
+  color: var(--c-on-dark-soft);
+}
+
+@media (max-width: 40em) {
+  .calc {
+    grid-template-columns: 1fr;
+  }
+  .calc__result {
+    min-height: 0;
+    gap: 1rem;
+  }
+}
