@@ -35,7 +35,7 @@
       links: [
         ["Agent workspace", "agent-desk.html"],
         ["Agency desk", "agency-desk.html"],
-        ["List a property", "list-a-home.html"],
+        ["List a property", "properties.html"],
         ["Market reports", "journal.html?topic=reports"],
       ],
     },
@@ -104,7 +104,7 @@
 
     <div class="site-header__actions">
       <a class="btn btn--outline btn--sm" href="desk.html">My Desk</a>
-      <a class="btn btn--dark btn--sm" href="list-a-home.html">List a home ${icon("arrow-up-right", "icon--diag")}</a>
+      <a class="btn btn--dark btn--sm" href="properties.html">List a home ${icon("arrow-up-right", "icon--diag")}</a>
     </div>
 
     <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
@@ -130,7 +130,7 @@
   </nav>
   <div class="mobile-menu__actions">
     <a class="btn btn--outline" href="desk.html">My Desk</a>
-    <a class="btn btn--dark" href="list-a-home.html">List a home ${icon("arrow-up-right", "icon--diag")}</a>
+    <a class="btn btn--dark" href="properties.html">List a home ${icon("arrow-up-right", "icon--diag")}</a>
   </div>
   <p class="mobile-menu__note">A clearer, calmer way to find the place that fits.</p>
 </div>`;

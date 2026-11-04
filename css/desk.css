@@ -1,9 +1,3 @@
-/* ==========================================================================
-   REALTY — css/desk.css
-   Shared by every My Desk page: shell · sidebar · mobile top bar · user chip ·
-   page head · stat band · panels · list rows · mortgage estimate
-   ========================================================================== */
-
 /* ---------- Shell ---------- */
 .desk-shell {
   display: grid;
