@@ -456,7 +456,7 @@
   transition:
     border-color 0.3s var(--ease),
     background-color 0.3s var(--ease);
-  -moz-appearance: textfield;
+  /* -moz-appearance: textfield; */
 }
 .calc__input::-webkit-outer-spin-button,
 .calc__input::-webkit-inner-spin-button {

@@ -1001,3 +1001,111 @@ body.has-tray .toast {
     transform: none;
   }
 }
+
+.results__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.results__list > li {
+  border-bottom: 1px solid var(--c-line);
+}
+.results__list > li[hidden] {
+  display: none;
+}
+
+/* Row variant of the shared property card */
+.property-card--row {
+  flex-direction: row;
+  border: 0;
+  background: transparent;
+  transition: background-color 0.35s var(--ease);
+}
+.property-card--row:hover {
+  transform: none;
+  box-shadow: none;
+}
+.property-card--row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--c-brand);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s var(--ease);
+  z-index: 2;
+}
+.property-card--row.is-active,
+.property-card--row.is-selected {
+  background: var(--c-surface-hover);
+}
+.property-card--row.is-active::before,
+.property-card--row.is-selected::before {
+  transform: scaleY(1);
+}
+.property-card--row .property-card__media {
+  flex: 0 0 41%;
+  aspect-ratio: 9 / 10;
+}
+.property-card--row .property-card__actions {
+  top: 1rem;
+  right: 1rem;
+}
+.property-card--row .property-card__body {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem 3.4rem 0.9rem 1.2rem;
+  align-content: start;
+}
+.property-card--row .property-card__foot {
+  position: absolute;
+  left: calc(41% + 1.2rem);
+  right: 1rem;
+  bottom: 0.9rem;
+  margin: 0;
+}
+
+.compare-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  transition: color 0.3s var(--ease);
+}
+.compare-link:hover {
+  color: var(--c-brand);
+}
+.compare-link__on {
+  display: none;
+}
+.compare-link[aria-pressed="true"] {
+  color: var(--c-brand);
+}
+.compare-link[aria-pressed="true"] .compare-link__off {
+  display: none;
+}
+.compare-link[aria-pressed="true"] .compare-link__on {
+  display: inline;
+}
+
+.empty-state {
+  display: grid;
+  justify-items: start;
+  gap: 0.9rem;
+  padding: 3rem 0;
+  color: var(--c-ink-soft);
+}
+.empty-state__title {
+  font-size: 1.9rem;
+  color: var(--c-ink);
+}
+.empty-state[hidden] {
+  display: none;
+}
