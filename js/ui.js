@@ -181,6 +181,53 @@
   renderTray();
 
   syncButtons();
+
+  /* ---------- Confirmation dialog ---------- */
+  const confirmDialog = ({
+    title,
+    text,
+    confirmLabel = "Confirm",
+    danger = false,
+  }) =>
+    new Promise((resolve) => {
+      const dlg = document.createElement("dialog");
+      dlg.className = "dialog dialog--sm";
+      dlg.setAttribute("aria-labelledby", "confirm-title");
+      dlg.innerHTML = `
+      <div class="dialog__head"><h2 class="dialog__title" id="confirm-title">${title}</h2></div>
+      <div class="dialog__body"><p class="lead">${text}</p></div>
+      <div class="dialog__foot dialog__foot--end">
+        <button class="btn btn--outline btn--sm" type="button" data-confirm="no">Keep it</button>
+        <button class="btn ${danger ? "btn--danger" : "btn--dark"} btn--sm" type="button" data-confirm="yes">${confirmLabel}</button>
+      </div>`;
+      document.body.append(dlg);
+      let result = false;
+      dlg.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-confirm]");
+        if (btn) {
+          result = btn.dataset.confirm === "yes";
+          dlg.close();
+        } else if (e.target === dlg) dlg.close();
+      });
+      dlg.addEventListener("close", () => {
+        dlg.remove();
+        resolve(result);
+      });
+      dlg.showModal();
+    });
+
+  window.RealtyUI = {
+    toast,
+    read,
+    write,
+    KEYS,
+    sync: () => {
+      syncButtons();
+      renderTray();
+    },
+    confirm: confirmDialog,
+  };
+
   window.RealtyUI = {
     toast,
     read,

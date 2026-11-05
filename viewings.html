@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Viewings — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/scheduler.js" defer></script>
+    <script src="js/viewings.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="viewings">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk / Viewings</p>
+            <h1 class="desk-head__title">Viewing plan.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="tab-strip" data-viewing-filter>
+          <fieldset class="tabs">
+            <legend class="visually-hidden">Filter viewings by status</legend>
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="all"
+                checked
+              /><span>All</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="requested"
+              /><span>Requested</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="confirmed"
+              /><span>Confirmed</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="rescheduled"
+              /><span>Rescheduled</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="cancelled"
+              /><span>Cancelled</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="completed"
+              /><span>Completed</span></label
+            >
+          </fieldset>
+          <button
+            class="btn btn--dark btn--sm tab-strip__action"
+            type="button"
+            data-schedule
+          >
+            Schedule a viewing
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-plus"></use>
+            </svg>
+          </button>
+        </div>
+
+        <p
+          class="desk-toolbar__count desk-toolbar__count--spaced"
+          data-viewing-count
+          aria-live="polite"
+        >
+          0 viewings
+        </p>
+
+        <ul class="entry-list" data-viewing-list></ul>
+
+        <div class="empty-state" data-viewing-empty hidden>
+          <h2 class="empty-state__title">No viewings here.</h2>
+          <p>Pick a home you like and choose a time that suits you.</p>
+          <button class="btn btn--dark btn--sm" type="button" data-schedule>
+            Schedule a viewing
+          </button>
+        </div>
+
+        <p class="compare-note">
+          Viewing requests are a front-end concept in this demo. An agent's
+          confirmation will be wired up with Firebase later.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
