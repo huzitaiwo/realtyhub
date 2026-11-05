@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Saved searches — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/searches.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="saved-searches">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk / Searches</p>
+            <h1 class="desk-head__title">Saved searches.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="desk-toolbar">
+          <p class="desk-toolbar__count" data-search-count aria-live="polite">
+            0 saved searches
+          </p>
+          <button class="btn btn--dark btn--sm" type="button" data-new-search>
+            New saved search
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-plus"></use>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="entry-list" data-search-list></ul>
+
+        <div class="empty-state" data-search-empty hidden>
+          <h2 class="empty-state__title">No saved searches yet.</h2>
+          <p>
+            Save a search and REALTY will tell you when a matching home appears.
+          </p>
+          <button class="btn btn--dark btn--sm" type="button" data-new-search>
+            Create a saved search
+          </button>
+        </div>
+
+        <p class="compare-note">
+          Alerts are a front-end concept in this demo. Match counts are taken
+          from the demo collection only.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
