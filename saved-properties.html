@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Saved properties — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/saved.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="saved-properties">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk / Saved</p>
+            <h1 class="desk-head__title">Saved properties.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="desk-toolbar" data-saved-toolbar>
+          <p class="desk-toolbar__count" data-saved-count aria-live="polite">
+            0 saved homes
+          </p>
+
+          <div class="desk-toolbar__controls">
+            <fieldset class="tabs" data-saved-view>
+              <legend class="visually-hidden">Layout</legend>
+              <label class="tabs__tab"
+                ><input
+                  class="visually-hidden"
+                  type="radio"
+                  name="view"
+                  value="grid"
+                  checked
+                /><span>Grid</span></label
+              >
+              <label class="tabs__tab"
+                ><input
+                  class="visually-hidden"
+                  type="radio"
+                  name="view"
+                  value="list"
+                /><span>List</span></label
+              >
+            </fieldset>
+
+            <label class="desk-toolbar__sort">
+              <span class="field__label">Sort</span>
+              <select class="field__control" data-saved-sort>
+                <option value="recent">Recently saved</option>
+                <option value="price-asc">Price low to high</option>
+                <option value="price-desc">Price high to low</option>
+                <option value="largest">Largest</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div data-saved-results></div>
+
+        <div class="empty-state" data-saved-empty hidden>
+          <h2 class="empty-state__title">Nothing saved just yet.</h2>
+          <p>Tap the heart on any home and it will wait for you here.</p>
+          <a class="btn btn--dark btn--sm" href="buy.html"
+            >Browse homes
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-arrow-right"></use></svg
+          ></a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

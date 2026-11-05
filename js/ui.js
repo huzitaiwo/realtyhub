@@ -181,5 +181,14 @@
   renderTray();
 
   syncButtons();
-  window.RealtyUI = { toast, read, write, KEYS };
+  window.RealtyUI = {
+    toast,
+    read,
+    write,
+    KEYS,
+    sync: () => {
+      syncButtons();
+      renderTray();
+    },
+  };
 })();

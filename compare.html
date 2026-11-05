@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Compare — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/compare.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/compare.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="compare">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk / Compare</p>
+            <h1 class="desk-head__title">Side by side.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="desk-toolbar">
+          <p class="desk-toolbar__count" data-compare-count aria-live="polite">
+            0 of 4 homes selected
+          </p>
+          <div class="compare-add">
+            <label class="visually-hidden" for="add-home"
+              >Add a home to compare</label
+            >
+            <select
+              class="field__control"
+              id="add-home"
+              data-add-select
+            ></select>
+            <button class="btn btn--dark btn--sm" type="button" data-add-btn>
+              Add home
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-plus"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <ul class="compare-legend" aria-label="Highlights">
+          <li><span class="best-tag">Best price</span></li>
+          <li><span class="best-tag">Largest area</span></li>
+          <li><span class="best-tag">Most bedrooms</span></li>
+          <li><span class="best-tag">Lowest estimated payment</span></li>
+        </ul>
+
+        <div data-compare-view></div>
+
+        <div class="empty-state" data-compare-empty hidden>
+          <h2 class="empty-state__title">Choose homes to compare.</h2>
+          <p>
+            Add up to four homes from search results or your saved properties.
+          </p>
+          <a class="btn btn--dark btn--sm" href="buy.html"
+            >Browse homes
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-arrow-right"></use></svg
+          ></a>
+        </div>
+
+        <p class="compare-note">
+          Monthly estimates for homes for sale assume a 20% deposit at 4.5%
+          interest over 25 years. For rentals, the monthly figure is the rent.
+          Estimates only, not financial advice.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
