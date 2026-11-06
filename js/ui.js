@@ -228,6 +228,22 @@
     confirm: confirmDialog,
   };
 
+  const getObject = (key, fallback = {}) => {
+    try {
+      const v = JSON.parse(localStorage.getItem(key));
+      return v && typeof v === "object" && !Array.isArray(v) ? v : fallback;
+    } catch {
+      return fallback;
+    }
+  };
+  const setObject = (key, value) => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+      /* storage unavailable */
+    }
+  };
+
   window.RealtyUI = {
     toast,
     read,
@@ -237,5 +253,8 @@
       syncButtons();
       renderTray();
     },
+    confirm: confirmDialog,
+    getObject,
+    setObject,
   };
 })();

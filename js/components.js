@@ -44,7 +44,7 @@
       links: [
         ["How it works", "index.html#how-it-works"],
         ["Help centre", "help.html"],
-        ["Preferences", "desk.html#preferences"],
+        ["Preferences", "settings.html#preferences"],
         ["Privacy", "privacy.html"],
       ],
     },

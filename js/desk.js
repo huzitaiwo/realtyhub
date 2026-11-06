@@ -8,7 +8,28 @@
 (() => {
   "use strict";
 
-  const USER = { name: "Handsome", initial: "H", note: "Personal workspace" };
+  const esc = (s) =>
+    String(s).replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    );
+  const profile = window.RealtyUI
+    ? window.RealtyUI.getObject("realty:profile", {})
+    : {};
+  const name = (profile.name || "").trim() || "Handsome";
+  const USER = {
+    name,
+    safe: esc(name),
+    initial: esc(name.charAt(0).toUpperCase()),
+    note: "Personal workspace",
+  };
 
   const NAV = [
     ["overview", "Overview", "grid", "desk.html"],
@@ -52,7 +73,7 @@
   const userHTML = `
 <div class="user-chip">
   <span class="user-chip__avatar" aria-hidden="true">${USER.initial}</span>
-  <span class="user-chip__text"><strong>${USER.name}</strong><span>${USER.note}</span></span>
+  <span class="user-chip__text"><strong>${USER.name}</strong> to <strong>${USER.safe}</strong><span>${USER.note}</span></span>
 </div>`;
 
   const sidebarSlot = document.querySelector('[data-component="desk-sidebar"]');
