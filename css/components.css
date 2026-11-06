@@ -1498,3 +1498,19 @@ textarea.input {
   font-size: 0.8rem;
   font-weight: 700;
 }
+
+.icon-btn--dark {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.icon-btn--dark:hover {
+  background: #fff;
+  color: var(--c-ink);
+  border-color: #fff;
+}
+.icon-btn--dark[aria-pressed="true"] {
+  background: var(--c-brand);
+  border-color: var(--c-brand);
+  color: #fff;
+}

@@ -228,6 +228,114 @@ window.RealtyData = (() => {
   </article>
 </li>`;
 
+  /* ---------- Detail content (property page) ---------- */
+  const DETAILS = {
+    "bracken-house": { year: 2019, lot: 9500 },
+    "olive-court": { year: 2008, lot: 12000 },
+    "the-canton-apartment": { year: 2016 },
+    "marlowe-townhouse": { year: 1902, lot: 2400 },
+    "harlow-mews": { year: 2012 },
+    "linden-house": { year: 1998, lot: 8000 },
+    "pennant-lofts": { year: 2005 },
+    "seawall-terrace": { year: 1930, lot: 3000 },
+  };
+  const details = (p) => DETAILS[p.id] || {};
+
+  const AREAS = {
+    Clerkenwell: {
+      tagline: "Light-filled lofts & thoughtful food",
+      landmarks: [
+        ["Warehouse courtyards", "4 min walk"],
+        ["Design studios", "6 min walk"],
+      ],
+    },
+    Richmond: {
+      tagline: "River walks & village calm",
+      landmarks: [
+        ["Riverside path", "5 min walk"],
+        ["Village green", "7 min walk"],
+      ],
+    },
+    "Stoke Newington": {
+      tagline: "Leafy streets & strong local culture",
+      landmarks: [
+        ["Tree-lined park", "6 min walk"],
+        ["Local market", "8 min walk"],
+      ],
+    },
+    "West Hove": {
+      tagline: "Sea air & design-forward homes",
+      landmarks: [
+        ["Seafront promenade", "5 min walk"],
+        ["Beach huts", "7 min walk"],
+      ],
+    },
+  };
+  const areaOf = (p) => p.area.split(",")[0].trim();
+  const areaTagline = (p) =>
+    AREAS[areaOf(p)]
+      ? `${areaOf(p)} is known for ${AREAS[areaOf(p)].tagline.toLowerCase()}.`
+      : "";
+
+  /* Illustrative only — labelled as simulated on the page */
+  const nearby = (p) => ({
+    landmarks: (
+      AREAS[areaOf(p)] || { landmarks: [["Local landmark", "6 min walk"]] }
+    ).landmarks,
+    transport: [
+      ["Nearest station", "8 min walk"],
+      ["Bus stop", "2 min walk"],
+    ],
+    schools: [
+      ["Primary school (concept)", "10 min walk"],
+      ["Secondary school (concept)", "15 min walk"],
+    ],
+    shopping: [
+      ["Local high street", "5 min walk"],
+      ["Neighbourhood grocer", "3 min walk"],
+    ],
+    restaurants: [
+      ["Neighbourhood café", "2 min walk"],
+      ["Casual dining", "6 min walk"],
+    ],
+  });
+
+  /* Descriptions are generated only from the demo data above */
+  const describe = (p) => {
+    const type = p.type.toLowerCase();
+    const article = /^[aeiou]/.test(type) ? "An" : "A";
+    const rooms =
+      p.beds === 0
+        ? "a studio layout"
+        : `${p.beds} ${p.beds === 1 ? "bedroom" : "bedrooms"}`;
+    const lead = `${article} ${type} in ${areaOf(p)} with ${rooms}, ${bathsText(p.baths)} and ${p.sqft.toLocaleString("en-US")} sq ft of floor area.`;
+    const feats = p.features.map((f) => FEATURE_LABELS[f].toLowerCase());
+    const featureLine = feats.length
+      ? `Listed features include ${new Intl.ListFormat("en", { style: "long", type: "conjunction" }).format(feats)}.`
+      : "";
+    const agentLine = `${p.purpose === "rent" ? "Available to rent" : "Offered for sale"} through ${p.agency}, currently marked “${p.status}”.`;
+    return [
+      lead,
+      [featureLine, agentLine].filter(Boolean).join(" "),
+      areaTagline(p),
+    ].filter(Boolean);
+  };
+  const highlights = (p) => [
+    `${bedsText(p.beds)} · ${bathsText(p.baths)}`,
+    `${p.sqft.toLocaleString("en-US")} sq ft of floor area`,
+    ...p.features.slice(0, 3).map((f) => FEATURE_LABELS[f]),
+    p.status,
+  ];
+  const compactPrice = (p) =>
+    p.purpose === "rent"
+      ? `$${(p.price / 1000)
+          .toFixed(p.price % 1000 ? 2 : 0)
+          .replace(/0+$/, "")
+          .replace(/\.$/, "")}k`
+      : p.price >= 1e6
+        ? `$${+(p.price / 1e6).toFixed(2)}m`
+        : `$${Math.round(p.price / 1000)}k`;
+
   return {
     PROPERTIES,
     byId,
@@ -242,5 +350,13 @@ window.RealtyData = (() => {
     card,
     row,
     href,
+    details,
+    AREAS,
+    areaOf,
+    areaTagline,
+    nearby,
+    describe,
+    highlights,
+    compactPrice,
   };
 })();

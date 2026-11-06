@@ -88,6 +88,19 @@
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></symbol>
     <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12 20 4l-5 16-4-7zM11 13l9-9"/></symbol>
   <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3v12M8 7l4-4 4 4M5 13v7h14v-7"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M8 11l4 4 4-4M5 20h14"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16v-5l2-5h10l2 5v5M3 16h18M7.5 16v2M16.5 16v2M7 12h.01M17 12h.01"/></symbol>
+  <symbol id="i-waves" viewBox="0 0 24 24"><path d="M3 15c2 0 2-1.5 4.5-1.5S10 15 12 15s2-1.5 4.5-1.5S19 15 21 15M3 19c2 0 2-1.5 4.5-1.5S10 19 12 19s2-1.5 4.5-1.5S19 19 21 19M8 12V6a2 2 0 0 1 4 0M13 12V6a2 2 0 0 1 4 0"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14zM5 19l7-7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 3v18M4.5 7.5l15 9M19.5 7.5l-15 9"/></symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24"><path d="M7 11h.01M17 11h.01M10 7h.01M14 7h.01M12 12c3 0 5 3 5 5a2 2 0 0 1-2 2c-1 0-2-.5-3-.5s-2 .5-3 .5a2 2 0 0 1-2-2c0-2 2-5 5-5z"/></symbol>
+  <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3M3 13a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4H3zM6 17v2M18 17v2"/></symbol>
+  <symbol id="i-elevator" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18"/><path d="m9.5 10 2.5-3 2.5 3M9.5 14l2.5 3 2.5-3"/></symbol>
+  <symbol id="i-balcony" viewBox="0 0 24 24"><path d="M4 10h16M4 10v10M20 10v10M8 10v10M12 10v10M16 10v10M6 6h12v4"/></symbol>
 </svg>`;
 
   const icon = (name, cls = "") =>
