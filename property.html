@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Property — REALTY</title>
+    <meta name="description" content="Property details on REALTY." />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/property.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/scheduler.js" defer></script>
+    <script src="js/property.js" defer></script>
+  </head>
+
+  <!--
+  OPTIONAL IMAGES (the page shows only the ones that exist):
+  Exterior            -> the listing image already used on Buy / Rent
+  assets/images/gallery/<id>-living-room.jpg
+  assets/images/gallery/<id>-kitchen.jpg
+  assets/images/gallery/<id>-bedroom.jpg
+  assets/images/gallery/<id>-bathroom.jpg
+  assets/images/gallery/<id>-garden.jpg
+  assets/images/gallery/<id>-amenities.jpg
+  assets/images/floorplans/<id>-1.jpg   and   <id>-2.jpg
+  assets/video/<id>.mp4
+  <id> = bracken-house, olive-court, the-canton-apartment, marlowe-townhouse,
+         harlow-mews, linden-house, pennant-lofts, seawall-terrace
+-->
+
+  <body data-page="buy">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-component="site-header"></div>
+
+    <main id="main">
+      <div data-property>
+        <div class="container property-loading"><p>Loading home…</p></div>
+      </div>
+      <noscript
+        ><div class="container">
+          <p>Please enable JavaScript to view this home.</p>
+        </div></noscript
+      >
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
