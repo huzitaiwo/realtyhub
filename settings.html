@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Settings — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/account.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/settings.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="settings">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk / Settings</p>
+            <h1 class="desk-head__title">Settings.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="tool-stack" data-settings>
+          <!-- Alerts -->
+          <section class="panel" aria-labelledby="alerts-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Alerts</p>
+                <h2 class="panel__title" id="alerts-title">
+                  What should we tell you?
+                </h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-bell"></use>
+              </svg>
+            </header>
+
+            <table class="setting-table">
+              <caption class="visually-hidden">
+                Choose how you want to hear about each type of alert
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Alert</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">In app</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <strong>New matching property</strong
+                    ><span>A new home fits one of your saved searches.</span>
+                  </th>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="match.email"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >Email for new matching property</span
+                      ></label
+                    >
+                  </td>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="match.app"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >In app for new matching property</span
+                      ></label
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <strong>Price reduced</strong
+                    ><span>A saved home changes its asking price.</span>
+                  </th>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="price.email"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >Email for price reduced</span
+                      ></label
+                    >
+                  </td>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="price.app"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >In app for price reduced</span
+                      ></label
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <strong>Property status changed</strong
+                    ><span
+                      >A saved home is under offer, sold or back on the
+                      market.</span
+                    >
+                  </th>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="status.email"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >Email for property status changed</span
+                      ></label
+                    >
+                  </td>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="status.app"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >In app for property status changed</span
+                      ></label
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <strong>Viewing reminder</strong
+                    ><span>A reminder before each confirmed viewing.</span>
+                  </th>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="viewing.email"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >Email for viewing reminder</span
+                      ></label
+                    >
+                  </td>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="viewing.app"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >In app for viewing reminder</span
+                      ></label
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <strong>Agent response</strong
+                    ><span>An agent replies to one of your messages.</span>
+                  </th>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="agent.email"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >Email for agent response</span
+                      ></label
+                    >
+                  </td>
+                  <td>
+                    <label class="switch"
+                      ><input
+                        class="visually-hidden"
+                        type="checkbox"
+                        data-setting="agent.app"
+                      /><span class="switch__track" aria-hidden="true"></span
+                      ><span class="visually-hidden"
+                        >In app for agent response</span
+                      ></label
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Preferences -->
+          <section class="panel" id="preferences" aria-labelledby="prefs-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Preferences</p>
+                <h2 class="panel__title" id="prefs-title">How things look</h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-settings"></use>
+              </svg>
+            </header>
+
+            <div class="form-grid">
+              <label class="field">
+                <span class="field__label">Area unit</span>
+                <select class="input" data-setting="unit">
+                  <option value="sqft">Square feet</option>
+                  <option value="sqm">Square metres</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Search opens on</span>
+                <select class="input" data-setting="purpose">
+                  <option value="buy">Homes for sale</option>
+                  <option value="rent">Homes to rent</option>
+                </select>
+              </label>
+              <div class="field">
+                <span class="field__label">Currency</span>
+                <p class="setting-static">US dollar ($)</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Privacy -->
+          <section class="panel" aria-labelledby="privacy-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Privacy</p>
+                <h2 class="panel__title" id="privacy-title">Who sees what</h2>
+              </div>
+            </header>
+
+            <div class="setting-row">
+              <div>
+                <strong>Share my profile with agents</strong>
+                <p>
+                  When you contact an agent, they can see the name and
+                  preferences from your profile.
+                </p>
+              </div>
+              <label class="switch"
+                ><input
+                  class="visually-hidden"
+                  type="checkbox"
+                  data-setting="showProfile"
+                /><span class="switch__track" aria-hidden="true"></span
+                ><span class="visually-hidden"
+                  >Share my profile with agents</span
+                ></label
+              >
+            </div>
+          </section>
+
+          <!-- Data -->
+          <section class="panel" aria-labelledby="data-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Your data</p>
+                <h2 class="panel__title" id="data-title">Start fresh</h2>
+              </div>
+            </header>
+
+            <div class="setting-row">
+              <div>
+                <strong>Clear saved data on this device</strong>
+                <p>
+                  Removes saved homes, searches, viewings, messages,
+                  notifications, your profile and these settings from this
+                  browser.
+                </p>
+              </div>
+              <button
+                class="btn btn--danger btn--sm"
+                type="button"
+                data-clear-data
+              >
+                Clear data
+              </button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

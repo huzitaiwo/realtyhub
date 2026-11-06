@@ -1,0 +1,223 @@
+/* ==========================================================================
+   REALTY — css/account.css
+   Profile · Settings · Notifications (desk pages)
+   ========================================================================== */
+
+/* ---------- Shared form bits ---------- */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+.form-actions__note {
+  max-width: 32rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+.tool-stack {
+  display: grid;
+  gap: 1.1rem;
+}
+.sched__group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* ---------- Profile ---------- */
+.profile-id {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.profile-id__note {
+  max-width: 18rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+.avatar-lg {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--c-brand);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+}
+.choice-grid--areas {
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+}
+.choice--text strong {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+/* ---------- Settings ---------- */
+.setting-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.setting-table th,
+.setting-table td {
+  padding: 1rem 0;
+  border-top: 1px solid var(--c-line);
+  text-align: left;
+  vertical-align: middle;
+}
+.setting-table thead th {
+  padding-top: 0;
+  border-top: 0;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+.setting-table th[scope="row"] {
+  font-weight: 400;
+}
+.setting-table th[scope="row"] strong {
+  display: block;
+  font-size: 0.78rem;
+}
+.setting-table th[scope="row"] span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: var(--c-ink-muted);
+}
+.setting-table td,
+.setting-table thead th:not(:first-child) {
+  width: 6.5rem;
+  text-align: center;
+}
+.setting-table .switch {
+  justify-content: center;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--c-line);
+}
+.setting-row strong {
+  display: block;
+  font-size: 0.78rem;
+}
+.setting-row p {
+  max-width: 34rem;
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--c-ink-muted);
+}
+.setting-static {
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--c-line);
+  background: var(--c-surface-hover);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ---------- Notifications ---------- */
+.notice {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.15rem 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  transition: border-color 0.3s var(--ease);
+}
+.notice:hover {
+  border-color: var(--c-ink-muted);
+}
+.notice.is-unread::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--c-brand);
+}
+.notice__icon {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--c-line);
+  border-radius: 50%;
+  background: var(--c-bg);
+  color: var(--c-brand);
+}
+.notice.is-unread .notice__icon {
+  border-color: var(--c-brand);
+}
+.notice__title {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.notice.is-unread .notice__title {
+  font-weight: 800;
+}
+.notice__text {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
+.notice__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+  margin-top: 0.75rem;
+}
+.notice__time {
+  font-size: 0.62rem;
+  color: var(--c-ink-muted);
+  white-space: nowrap;
+}
+.tab-strip__action:disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+@media (max-width: 40em) {
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .setting-table td,
+  .setting-table thead th:not(:first-child) {
+    width: 4.5rem;
+  }
+  .notice {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 1rem;
+  }
+  .notice__time {
+    grid-column: 2;
+  }
+}

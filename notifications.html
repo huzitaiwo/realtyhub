@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notifications — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/account.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/notifications.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="notifications">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">
+              Your property desk / Notifications
+            </p>
+            <h1 class="desk-head__title">What changed.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="tab-strip" data-notice-filter>
+          <fieldset class="tabs">
+            <legend class="visually-hidden">Filter notifications</legend>
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="show"
+                value="all"
+                checked
+              /><span>All</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="show"
+                value="unread"
+              /><span>Unread</span></label
+            >
+          </fieldset>
+          <button
+            class="btn btn--outline btn--sm tab-strip__action"
+            type="button"
+            data-read-all
+          >
+            Mark all as read
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-check"></use>
+            </svg>
+          </button>
+        </div>
+
+        <p
+          class="desk-toolbar__count desk-toolbar__count--spaced"
+          data-notice-count
+          aria-live="polite"
+        >
+          0 unread
+        </p>
+
+        <ul class="entry-list" data-notice-list></ul>
+
+        <div class="empty-state" data-notice-empty hidden>
+          <h2 class="empty-state__title">You're all caught up.</h2>
+          <p>New matches, price changes and replies will appear here.</p>
+          <a class="btn btn--dark btn--sm" href="settings.html"
+            >Alert settings
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-arrow-right"></use></svg
+          ></a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
