@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/account.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/profile.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="profile">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk / Profile</p>
+            <h1 class="desk-head__title">Your profile.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <form class="desk-grid" data-profile novalidate>
+          <section class="panel" aria-labelledby="pd-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">About you</p>
+                <h2 class="panel__title" id="pd-title">Personal details</h2>
+              </div>
+            </header>
+
+            <div class="profile-id">
+              <span class="avatar-lg" data-avatar aria-hidden="true">H</span>
+              <p class="profile-id__note">
+                Your initial appears in the desk header and your messages.
+              </p>
+            </div>
+
+            <div class="form-grid">
+              <label class="field span-2">
+                <span class="field__label">Name</span>
+                <input
+                  class="input"
+                  name="name"
+                  type="text"
+                  maxlength="60"
+                  autocomplete="name"
+                  required
+                />
+                <span
+                  class="field__error"
+                  data-error="name"
+                  role="alert"
+                ></span>
+              </label>
+              <label class="field">
+                <span class="field__label">Email</span>
+                <input
+                  class="input"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                />
+                <span
+                  class="field__error"
+                  data-error="email"
+                  role="alert"
+                ></span>
+              </label>
+              <label class="field">
+                <span class="field__label">Phone</span>
+                <input
+                  class="input"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="Optional"
+                />
+              </label>
+              <label class="field span-2">
+                <span class="field__label">Where do you live now?</span>
+                <input
+                  class="input"
+                  name="location"
+                  type="text"
+                  autocomplete="address-level2"
+                  placeholder="City or neighbourhood"
+                />
+              </label>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="pp-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">What you're after</p>
+                <h2 class="panel__title" id="pp-title">Home preferences</h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-home"></use>
+              </svg>
+            </header>
+
+            <div class="form-grid">
+              <label class="field">
+                <span class="field__label">Looking to</span>
+                <select class="input" name="purpose">
+                  <option value="buy">Buy</option>
+                  <option value="rent">Rent</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Bedrooms</span>
+                <select class="input" name="beds">
+                  <option value="0">Any</option>
+                  <option value="-1">Studio</option>
+                  <option value="1">1+</option>
+                  <option value="2">2+</option>
+                  <option value="3">3+</option>
+                  <option value="4">4+</option>
+                  <option value="5">5+</option>
+                </select>
+              </label>
+              <label class="field">
+                <span class="field__label">Budget from</span>
+                <input
+                  class="input"
+                  name="budgetMin"
+                  type="number"
+                  inputmode="numeric"
+                  min="0"
+                  step="1000"
+                  placeholder="No minimum"
+                />
+              </label>
+              <label class="field">
+                <span class="field__label">Budget up to</span>
+                <input
+                  class="input"
+                  name="budgetMax"
+                  type="number"
+                  inputmode="numeric"
+                  min="0"
+                  step="1000"
+                  placeholder="No maximum"
+                />
+              </label>
+
+              <fieldset class="field span-2 sched__group">
+                <legend class="field__label">Preferred neighbourhoods</legend>
+                <div class="choice-grid choice-grid--areas">
+                  <label class="choice choice--text"
+                    ><input
+                      class="visually-hidden"
+                      type="checkbox"
+                      name="areas"
+                      value="Clerkenwell"
+                    /><span><strong>Clerkenwell</strong></span></label
+                  >
+                  <label class="choice choice--text"
+                    ><input
+                      class="visually-hidden"
+                      type="checkbox"
+                      name="areas"
+                      value="Richmond"
+                    /><span><strong>Richmond</strong></span></label
+                  >
+                  <label class="choice choice--text"
+                    ><input
+                      class="visually-hidden"
+                      type="checkbox"
+                      name="areas"
+                      value="Stoke Newington"
+                    /><span><strong>Stoke Newington</strong></span></label
+                  >
+                  <label class="choice choice--text"
+                    ><input
+                      class="visually-hidden"
+                      type="checkbox"
+                      name="areas"
+                      value="West Hove"
+                    /><span><strong>West Hove</strong></span></label
+                  >
+                </div>
+              </fieldset>
+            </div>
+          </section>
+
+          <div class="form-actions">
+            <p class="form-actions__note">
+              Preferences help REALTY suggest homes. In this demo they stay on
+              this device.
+            </p>
+            <button class="btn btn--dark" type="submit">
+              Save profile
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-check"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
