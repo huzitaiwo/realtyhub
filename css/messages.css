@@ -1,0 +1,260 @@
+/* ==========================================================================
+   REALTY — css/messages.css
+   Messages page only: two-pane inbox · bubbles · composer
+   ========================================================================== */
+
+.inbox {
+  display: grid;
+  grid-template-columns: 21rem minmax(0, 1fr);
+  height: clamp(32rem, calc(100vh - 16rem), 46rem);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+}
+
+/* ---------- Thread list ---------- */
+.inbox__list-wrap {
+  min-height: 0;
+  border-right: 1px solid var(--c-line);
+  overflow-y: auto;
+}
+.inbox__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.inbox__none {
+  padding: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--c-ink-muted);
+}
+
+.thread {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 1fr) auto;
+  gap: 0.85rem;
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border: 0;
+  border-bottom: 1px solid var(--c-line);
+  background: transparent;
+  text-align: left;
+  transition: background-color 0.3s var(--ease);
+}
+.thread:hover {
+  background: var(--c-bg);
+}
+.thread[aria-current="true"] {
+  background: var(--c-surface-hover);
+}
+.thread[aria-current="true"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--c-brand);
+}
+.thread__thumb {
+  width: 3.4rem;
+  height: 3.4rem;
+  object-fit: cover;
+}
+.thread__info {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+  align-content: start;
+}
+.thread__info strong {
+  font-size: 0.78rem;
+}
+.thread__agency {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--c-brand-hover);
+}
+.thread__snippet {
+  overflow: hidden;
+  font-size: 0.68rem;
+  color: var(--c-ink-muted);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.thread__meta {
+  display: grid;
+  justify-items: end;
+  align-content: start;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  color: var(--c-ink-muted);
+}
+.thread__badge {
+  display: grid;
+  place-items: center;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding-inline: 0.3rem;
+  border-radius: 999px;
+  background: var(--c-brand);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+
+/* ---------- Conversation ---------- */
+.inbox__thread {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+.thread-empty {
+  display: grid;
+  place-items: center;
+  flex: 1;
+  font-size: 0.8rem;
+  color: var(--c-ink-muted);
+}
+
+.thread-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--c-line);
+}
+.thread-head__back {
+  display: none;
+}
+.thread-head__thumb {
+  width: 3rem;
+  height: 3rem;
+  flex: none;
+  object-fit: cover;
+}
+.thread-head__info {
+  flex: 1;
+  min-width: 0;
+}
+.thread-head__info h2 {
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+.thread-head__info p {
+  font-size: 0.68rem;
+  color: var(--c-ink-muted);
+}
+
+.thread-log {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  overflow-y: auto;
+  background: var(--c-bg);
+}
+.thread-log:focus-visible {
+  outline-offset: -3px;
+}
+.thread-log__empty {
+  margin: auto;
+  font-size: 0.78rem;
+  color: var(--c-ink-muted);
+  text-align: center;
+}
+
+.msg {
+  display: grid;
+  gap: 0.35rem;
+  max-width: min(32rem, 86%);
+  padding: 0.8rem 1rem;
+  animation: msg-in 0.4s var(--ease);
+}
+.msg p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.msg time {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  opacity: 0.65;
+}
+.msg--agent {
+  align-self: flex-start;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+}
+.msg--me {
+  align-self: flex-end;
+  background: var(--c-ink);
+  color: var(--c-on-dark);
+}
+.msg--me time {
+  text-align: right;
+}
+@keyframes msg-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid var(--c-line);
+  background: var(--c-surface);
+}
+.composer__input {
+  flex: 1;
+  min-height: 2.9rem;
+  max-height: 8.75rem;
+  resize: none;
+  font-family: inherit;
+  line-height: 1.5;
+}
+.composer .btn {
+  height: 2.9rem;
+}
+
+/* ---------- Mobile: one pane at a time ---------- */
+@media (max-width: 56.25em) {
+  .inbox {
+    grid-template-columns: 1fr;
+    height: calc(100dvh - var(--header-h) - 9rem);
+    min-height: 28rem;
+  }
+  .inbox[data-pane="list"] .inbox__thread {
+    display: none;
+  }
+  .inbox[data-pane="thread"] .inbox__list-wrap {
+    display: none;
+  }
+  .inbox__list-wrap {
+    border-right: 0;
+  }
+  .thread-head {
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+  }
+  .thread-head__back {
+    display: grid;
+  }
+  .thread-head__thumb {
+    display: none;
+  }
+  .thread-log {
+    padding: 1rem;
+  }
+  .composer {
+    padding: 0.75rem 1rem;
+  }
+}

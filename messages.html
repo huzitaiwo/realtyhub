@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Messages — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/messages.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/messages.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="messages">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your property desk / Messages</p>
+            <h1 class="desk-head__title">Messages.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="inbox" data-inbox data-pane="list">
+          <nav class="inbox__list-wrap" aria-label="Conversations">
+            <ul class="inbox__list" data-thread-list></ul>
+          </nav>
+          <section
+            class="inbox__thread"
+            aria-label="Conversation"
+            data-thread-view
+          ></section>
+        </div>
+
+        <p class="compare-note">
+          Conversations are a front-end concept in this demo. Agents do not
+          reply automatically; real messaging will be wired up with Firebase
+          later.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
