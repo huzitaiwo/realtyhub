@@ -699,3 +699,14 @@
     align-items: flex-start;
   }
 }
+
+.compare-note {
+  max-width: 44rem;
+  margin-top: 1.25rem;
+  font-size: 0.7rem;
+  line-height: 1.7;
+  color: var(--c-ink-muted);
+}
+.compare-note[hidden] {
+  display: none;
+}

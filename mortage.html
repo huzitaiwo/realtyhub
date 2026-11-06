@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mortgage tools — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/mortgage.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/mortgage.js" defer></script>
+  </head>
+
+  <body class="desk" data-page="desk" data-desk="mortgage">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">
+              Your property desk / Mortgage tools
+            </p>
+            <h1 class="desk-head__title">Make the numbers clear.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <div class="tool-stack">
+          <!-- Mortgage calculator -->
+          <section class="panel" aria-labelledby="mc-title" data-reveal>
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Mortgage calculator</p>
+                <h2 class="panel__title" id="mc-title">What will it cost?</h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-calculator"></use>
+              </svg>
+            </header>
+
+            <form class="calc calc--wide" data-mortgage novalidate>
+              <div class="calc__fields calc__fields--two">
+                <label class="calc__field">
+                  <span class="field__label">Property price</span>
+                  <input
+                    class="calc__input"
+                    name="price"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1000"
+                    value="875000"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Deposit</span>
+                  <input
+                    class="calc__input"
+                    name="deposit"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1000"
+                    value="175000"
+                  />
+                </label>
+                <div class="calc__field">
+                  <span class="field__label">Loan amount</span>
+                  <output
+                    class="calc__input calc__input--static"
+                    data-m="loan-field"
+                    >$700,000</output
+                  >
+                </div>
+                <label class="calc__field">
+                  <span class="field__label">Interest rate %</span>
+                  <input
+                    class="calc__input"
+                    name="rate"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    max="30"
+                    step="0.1"
+                    value="4.5"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Loan term / years</span>
+                  <input
+                    class="calc__input"
+                    name="years"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    max="40"
+                    step="1"
+                    value="25"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Payment frequency</span>
+                  <select class="calc__input calc__select" name="frequency">
+                    <option value="monthly">Monthly</option>
+                    <option value="fortnightly">Fortnightly</option>
+                    <option value="weekly">Weekly</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="calc__result">
+                <p class="calc__label">
+                  Estimated <span data-m="freq-label">monthly</span> payment
+                </p>
+                <output class="calc__amount" data-m="payment" aria-live="polite"
+                  >$3,891</output
+                >
+
+                <div class="breakdown">
+                  <svg class="donut" viewBox="0 0 36 36" aria-hidden="true">
+                    <circle
+                      class="donut__bg"
+                      cx="18"
+                      cy="18"
+                      r="15"
+                      pathLength="100"
+                    ></circle>
+                    <circle
+                      class="donut__arc"
+                      cx="18"
+                      cy="18"
+                      r="15"
+                      pathLength="100"
+                      data-m="arc"
+                      stroke-dasharray="60 40"
+                    ></circle>
+                  </svg>
+                  <ul class="breakdown__legend">
+                    <li>
+                      <span class="dot dot--principal" aria-hidden="true"></span
+                      >Principal <strong data-m="principal">—</strong>
+                    </li>
+                    <li>
+                      <span class="dot dot--interest" aria-hidden="true"></span
+                      >Interest <strong data-m="interest-share">—</strong>
+                    </li>
+                  </ul>
+                </div>
+
+                <dl class="calc__stats">
+                  <div>
+                    <dt>Deposit</dt>
+                    <dd data-m="deposit-pct">20%</dd>
+                  </div>
+                  <div>
+                    <dt>Total interest</dt>
+                    <dd data-m="total-interest">—</dd>
+                  </div>
+                  <div>
+                    <dt>Total repayment</dt>
+                    <dd data-m="total">—</dd>
+                  </div>
+                </dl>
+
+                <p class="calc__note">
+                  This calculator provides estimates only and is not financial
+                  advice.
+                </p>
+              </div>
+            </form>
+          </section>
+
+          <!-- Affordability -->
+          <section class="panel" aria-labelledby="af-title" data-reveal>
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Affordability calculator</p>
+                <h2 class="panel__title" id="af-title">
+                  How much home can I afford?
+                </h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-home"></use>
+              </svg>
+            </header>
+
+            <form class="calc calc--wide" data-afford novalidate>
+              <div class="calc__fields calc__fields--two">
+                <label class="calc__field">
+                  <span class="field__label">Annual income</span>
+                  <input
+                    class="calc__input"
+                    name="income"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1000"
+                    value="120000"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Monthly expenses</span>
+                  <input
+                    class="calc__input"
+                    name="expenses"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="50"
+                    value="2000"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Deposit</span>
+                  <input
+                    class="calc__input"
+                    name="deposit"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    step="1000"
+                    value="150000"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Interest rate %</span>
+                  <input
+                    class="calc__input"
+                    name="rate"
+                    type="number"
+                    inputmode="decimal"
+                    min="0"
+                    max="30"
+                    step="0.1"
+                    value="4.5"
+                  />
+                </label>
+                <label class="calc__field">
+                  <span class="field__label">Loan term / years</span>
+                  <input
+                    class="calc__input"
+                    name="years"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    max="40"
+                    step="1"
+                    value="25"
+                  />
+                </label>
+              </div>
+
+              <div class="calc__result">
+                <p class="calc__label">
+                  Estimated home price you could consider
+                </p>
+                <output class="calc__amount" data-a="price" aria-live="polite"
+                  >—</output
+                >
+                <p class="calc__hint" data-a="msg"></p>
+
+                <dl class="calc__stats">
+                  <div>
+                    <dt>Estimated loan</dt>
+                    <dd data-a="loan">—</dd>
+                  </div>
+                  <div>
+                    <dt>Monthly payment</dt>
+                    <dd data-a="payment">—</dd>
+                  </div>
+                  <div>
+                    <dt>Deposit</dt>
+                    <dd data-a="deposit">—</dd>
+                  </div>
+                </dl>
+
+                <p class="calc__note">
+                  This calculator provides estimates only and is not financial
+                  advice. It assumes a repayment of no more than 35% of gross
+                  monthly income, and no more than what remains after your
+                  monthly expenses.
+                </p>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
