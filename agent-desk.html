@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent Desk — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/listings.css" />
+    <link rel="stylesheet" href="css/agent.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/scheduler.js" defer></script>
+    <script src="js/agent.js" defer></script>
+  </head>
+
+  <body
+    class="desk"
+    data-page="desk"
+    data-desk="overview"
+    data-desk-area="agent"
+  >
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main" data-agent>
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Your agent desk</p>
+            <h1 class="desk-head__title" data-greeting>
+              Good morning, Handsome.
+            </h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <section aria-label="Summary">
+          <dl class="stat-band">
+            <div class="stat">
+              <dt>Active listings</dt>
+              <dd class="stat__value" data-stat="active">00</dd>
+              <dd class="stat__note" data-stat-note="active">Live on REALTY</dd>
+            </div>
+            <div class="stat">
+              <dt>New leads</dt>
+              <dd class="stat__value" data-stat="leads">00</dd>
+              <dd class="stat__note" data-stat-note="leads">
+                Awaiting a reply
+              </dd>
+            </div>
+            <div class="stat">
+              <dt>Viewings to confirm</dt>
+              <dd class="stat__value" data-stat="viewings">00</dd>
+              <dd class="stat__note" data-stat-note="viewings">
+                On your listings
+              </dd>
+            </div>
+            <div class="stat">
+              <dt>Enquiry rate</dt>
+              <dd class="stat__value" data-stat="rate">0%</dd>
+              <dd class="stat__note">Leads per view</dd>
+            </div>
+          </dl>
+        </section>
+
+        <div class="desk-grid">
+          <!-- Leads -->
+          <section class="panel" id="leads" aria-labelledby="leads-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Inquiries</p>
+                <h2 class="panel__title" id="leads-title">Leads</h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-users"></use>
+              </svg>
+            </header>
+            <ul class="lead-list" data-lead-list></ul>
+            <p class="panel__empty" data-lead-empty hidden>
+              No enquiries yet. They will appear here as soon as someone
+              contacts you.
+            </p>
+          </section>
+
+          <!-- Activity -->
+          <section class="panel" aria-labelledby="feed-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Recent activity</p>
+                <h2 class="panel__title" id="feed-title">What happened</h2>
+              </div>
+              <a
+                class="icon-btn"
+                href="notifications.html"
+                aria-label="Open notifications"
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#i-bell"></use></svg
+              ></a>
+            </header>
+            <ol class="signal-list" data-feed></ol>
+          </section>
+
+          <!-- Viewings -->
+          <section class="panel" id="viewings" aria-labelledby="view-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Schedule</p>
+                <h2 class="panel__title" id="view-title">Viewing requests</h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-calendar"></use>
+              </svg>
+            </header>
+            <ul class="agent-viewings" data-viewing-list></ul>
+            <p class="panel__empty" data-viewing-empty hidden>
+              Viewings requested on your listings will appear here.
+            </p>
+          </section>
+
+          <!-- Top listings -->
+          <section class="panel" aria-labelledby="top-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Your listings</p>
+                <h2 class="panel__title" id="top-title">Best performing</h2>
+              </div>
+              <a class="link-arrow" href="properties.html">Manage</a>
+            </header>
+            <ol class="top-list" data-top-list></ol>
+          </section>
+
+          <!-- Analytics -->
+          <section
+            class="panel panel--full"
+            id="analytics"
+            aria-labelledby="an-title"
+          >
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Performance</p>
+                <h2 class="panel__title" id="an-title">Views over time</h2>
+              </div>
+              <fieldset class="tabs range-tabs" data-range>
+                <legend class="visually-hidden">Date range</legend>
+                <label class="tabs__tab"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="range"
+                    value="7"
+                  /><span>7 days</span></label
+                >
+                <label class="tabs__tab"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="range"
+                    value="14"
+                    checked
+                  /><span>14 days</span></label
+                >
+                <label class="tabs__tab"
+                  ><input
+                    class="visually-hidden"
+                    type="radio"
+                    name="range"
+                    value="30"
+                  /><span>30 days</span></label
+                >
+              </fieldset>
+            </header>
+
+            <figure class="chart" data-chart></figure>
+
+            <dl class="chart-stats" data-chart-stats></dl>
+
+            <div
+              class="table-scroll"
+              tabindex="0"
+              role="region"
+              aria-label="Listing performance, scrollable"
+            >
+              <table class="data-table" data-perf>
+                <caption class="visually-hidden">
+                  Listing performance
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Home</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Views</th>
+                    <th scope="col">Leads</th>
+                    <th scope="col">Enquiry rate</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <p class="compare-note">
+              Figures are representative demos generated from your listings on
+              this device.
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
