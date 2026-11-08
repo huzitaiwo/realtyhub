@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Journal — REALTY</title>
+    <meta name="description" content="A story from the REALTY journal." />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/content.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/articles.js" defer></script>
+    <script src="js/article.js" defer></script>
+  </head>
+
+  <!--
+  IMAGES (already used on the Journal page):
+  assets/images/journal-featured.jpg, journal-floor-plan.jpg, journal-clerkenwell-walk.jpg,
+  journal-renting-well.jpg, journal-light-stone-oak.jpg, journal-reading-prices.jpg,
+  journal-mortgage-estimates.jpg
+-->
+
+  <body data-page="journal">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="read-progress" data-progress aria-hidden="true"></div>
+    <div data-component="site-header"></div>
+
+    <main id="main">
+      <div data-article>
+        <div class="container article-missing"><p>Loading story…</p></div>
+      </div>
+      <noscript
+        ><div class="container">
+          <p>Please enable JavaScript to read this story.</p>
+        </div></noscript
+      >
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
