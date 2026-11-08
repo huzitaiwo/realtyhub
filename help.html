@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Help centre — REALTY</title>
+    <meta
+      name="description"
+      content="Answers about searching, comparing, viewings, mortgage estimates, My Desk and listing a home on REALTY."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/content.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/help.js" defer></script>
+  </head>
+
+  <body data-page="help">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-component="site-header"></div>
+
+    <main id="main">
+      <section class="container page-head" aria-labelledby="page-title">
+        <div class="page-head__row">
+          <div>
+            <p class="eyebrow eyebrow--mark">Help centre</p>
+            <h1 id="page-title" class="page-head__title">How can we help?</h1>
+          </div>
+          <p class="page-head__aside" data-help-count aria-live="polite">
+            16 answers
+          </p>
+        </div>
+
+        <form class="help-search" role="search" data-help-search>
+          <label class="visually-hidden" for="help-q"
+            >Search the help centre</label
+          >
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-search"></use>
+          </svg>
+          <input
+            class="input"
+            id="help-q"
+            type="search"
+            placeholder="Search for an answer"
+            autocomplete="off"
+          />
+        </form>
+
+        <div class="tab-strip" data-help-tabs>
+          <fieldset class="tabs">
+            <legend class="visually-hidden">Filter answers by topic</legend>
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="cat"
+                value="all"
+                checked
+              /><span>All</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="cat"
+                value="buying"
+              /><span>Buying</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="cat"
+                value="renting"
+              /><span>Renting</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="cat"
+                value="viewings"
+              /><span>Viewings</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="cat"
+                value="mortgage"
+              /><span>Mortgage estimates</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="cat"
+                value="account"
+              /><span>My Desk</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="cat"
+                value="agents"
+              /><span>For agents</span></label
+            >
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="container help-list" aria-label="Answers">
+        <div class="accordion" data-accordion data-help-list></div>
+        <noscript
+          ><p class="prose">
+            Please enable JavaScript to read the help answers.
+          </p></noscript
+        >
+
+        <div class="empty-state" data-help-empty hidden>
+          <h2 class="empty-state__title">No answers match that search.</h2>
+          <p>Try a different word, or send us your question below.</p>
+          <button class="btn btn--dark btn--sm" type="button" data-help-reset>
+            Clear search
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="section section--dark"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container split split--wide-left">
+          <div data-reveal>
+            <p class="eyebrow eyebrow--brand">Still need help?</p>
+            <h2 id="contact-title" class="h2 h2--lg">Send us your question.</h2>
+            <p class="lead">
+              Tell us what you were trying to do and we'll point you in the
+              right direction.
+            </p>
+          </div>
+
+          <form class="help-form" data-help-form novalidate data-reveal>
+            <div class="form-grid">
+              <label class="field"
+                ><span class="field__label">Name</span
+                ><input
+                  class="input"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+              /></label>
+              <label class="field"
+                ><span class="field__label">Email</span
+                ><input
+                  class="input"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+              /></label>
+              <label class="field span-2"
+                ><span class="field__label">Topic</span>
+                <select class="input" name="topic">
+                  <option>Searching and filters</option>
+                  <option>Viewings</option>
+                  <option>Mortgage estimates</option>
+                  <option>My Desk</option>
+                  <option>Listing a home</option>
+                  <option>Something else</option>
+                </select></label
+              >
+              <label class="field span-2"
+                ><span class="field__label">Message</span
+                ><textarea class="input" name="message" rows="4"></textarea>
+              </label>
+            </div>
+            <p class="field__error" data-help-error role="alert"></p>
+            <button class="btn btn--brand" type="submit">
+              Send message
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-arrow-right"></use>
+              </svg>
+            </button>
+            <p class="help-form__note">
+              This form is a front-end concept in this demo; messages stay on
+              this device.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy — REALTY</title>
+    <meta
+      name="description"
+      content="How the REALTY product concept handles information you enter, what is stored on your device and the choices you have."
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/content.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/legal.js" defer></script>
+  </head>
+
+  <body data-page="privacy">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div data-component="site-header"></div>
+
+    <main id="main">
+      <section class="container page-head" aria-labelledby="page-title">
+        <div class="page-head__row">
+          <div>
+            <p class="eyebrow eyebrow--mark">Privacy</p>
+            <h1 id="page-title" class="page-head__title">
+              How we handle your information.
+            </h1>
+          </div>
+          <p class="page-head__aside">
+            Last updated <time datetime="2026-11-08">8 November 2026</time>
+          </p>
+        </div>
+      </section>
+
+      <section class="container legal" aria-label="Privacy notice">
+        <nav class="legal__toc" aria-label="On this page" data-toc>
+          <p class="legal__toc-title">On this page</p>
+          <ol>
+            <li><a href="#about">About this notice</a></li>
+            <li><a href="#information">Information you enter</a></li>
+            <li><a href="#use">How it is used</a></li>
+            <li><a href="#storage">What is stored on your device</a></li>
+            <li><a href="#third-parties">Third-party services</a></li>
+            <li><a href="#choices">Your choices</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#changes">Changes</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ol>
+        </nav>
+
+        <article class="legal__body">
+          <section id="about" aria-labelledby="h-about">
+            <h2 id="h-about">About this notice</h2>
+            <p>
+              REALTY is a product concept interface by Handsome. It shows how a
+              property marketplace could work: searching, comparing, saving,
+              viewings, mortgage estimates and tools for agents. Property
+              availability and financial figures shown are representative demos.
+            </p>
+            <p>
+              This notice explains, in plain language, what the current version
+              does with information you enter. It describes how the site behaves
+              today, and it will be updated before any real accounts, payments
+              or messaging are added.
+            </p>
+          </section>
+
+          <section id="information" aria-labelledby="h-info">
+            <h2 id="h-info">Information you enter</h2>
+            <p>
+              You may type information into the site as you use it. Depending on
+              what you use, this can include:
+            </p>
+            <ul>
+              <li>
+                Your name, email address, phone number and home preferences, in
+                Profile.
+              </li>
+              <li>
+                Saved homes, saved searches and homes selected for comparison.
+              </li>
+              <li>
+                Viewing requests, including the date, time and contact details
+                you enter.
+              </li>
+              <li>Messages and enquiries you write to an agency.</li>
+              <li>
+                Listing details, photos and team details, if you use the agent
+                or agency tools.
+              </li>
+              <li>Questions you send through the Help centre form.</li>
+            </ul>
+            <p>
+              Please do not enter information you would not want stored in your
+              own browser.
+            </p>
+          </section>
+
+          <section id="use" aria-labelledby="h-use">
+            <h2 id="h-use">How it is used</h2>
+            <p>
+              Information you enter is used only to make the features you use
+              work, for example to show your saved homes again or to fill in a
+              form with your name. In this version of the site it is not sent to
+              a server, sold, or used for advertising.
+            </p>
+          </section>
+
+          <section id="storage" aria-labelledby="h-storage">
+            <h2 id="h-storage">What is stored on your device</h2>
+            <p>
+              REALTY does not set tracking cookies. It uses your browser's local
+              storage to remember what you enter. This data stays in your
+              browser on this device.
+            </p>
+            <div
+              class="table-scroll"
+              tabindex="0"
+              role="region"
+              aria-label="Stored items, scrollable"
+            >
+              <table class="legal-table">
+                <caption class="visually-hidden">
+                  Items kept in local storage
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">What it remembers</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>realty:saved</code></th>
+                    <td>Homes you have saved</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:compare</code></th>
+                    <td>Homes selected for comparison</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:searches</code></th>
+                    <td>Your saved searches and alert settings</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:viewings</code></th>
+                    <td>Viewing requests and their status</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:messages</code></th>
+                    <td>Conversations with agencies</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:notifications</code></th>
+                    <td>Notifications and whether you have read them</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:profile</code></th>
+                    <td>Your profile and home preferences</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:settings</code></th>
+                    <td>Your alert, display and privacy settings</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>realty:support</code></th>
+                    <td>Messages sent through the Help centre form</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <code>realty:custom-listings</code>,
+                      <code>realty:leads</code>
+                    </th>
+                    <td>Listings and leads in the agent tools</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <code>realty:agency</code>, <code>realty:team</code>,
+                      <code>realty:assignments</code>
+                    </th>
+                    <td>
+                      Agency profile, team members and listing assignments
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="third-parties" aria-labelledby="h-third">
+            <h2 id="h-third">Third-party services</h2>
+            <p>
+              The site loads its typefaces from Google Fonts. When a page loads,
+              your browser requests the font files from Google, which can
+              receive technical information such as your IP address. The
+              simulated map and the virtual tour are built into the site and do
+              not contact a map or tour provider.
+            </p>
+            <p>
+              A later version may use Firebase for accounts and storage. This
+              notice will be updated before that happens.
+            </p>
+          </section>
+
+          <section id="choices" aria-labelledby="h-choices">
+            <h2 id="h-choices">Your choices</h2>
+            <ul>
+              <li>
+                Use <strong>Clear data</strong> in
+                <a href="settings.html">Settings</a> to remove everything REALTY
+                has saved in this browser.
+              </li>
+              <li>Clear your browser's site data for the same result.</li>
+              <li>
+                Choose whether to share your profile with agents in
+                <a href="settings.html">Settings</a>.
+              </li>
+              <li>
+                Pause or delete a saved search, or cancel a viewing, whenever
+                you like.
+              </li>
+            </ul>
+          </section>
+
+          <section id="children" aria-labelledby="h-children">
+            <h2 id="h-children">Children</h2>
+            <p>
+              REALTY is intended for adults looking to buy, rent or list a home.
+              It is not directed at children.
+            </p>
+          </section>
+
+          <section id="changes" aria-labelledby="h-changes">
+            <h2 id="h-changes">Changes</h2>
+            <p>
+              If how the site handles information changes, this page will be
+              updated and the date at the top will change.
+            </p>
+          </section>
+
+          <section id="contact" aria-labelledby="h-contact">
+            <h2 id="h-contact">Contact</h2>
+            <p>
+              Questions about this notice can be sent through the
+              <a href="help.html#contact">Help centre</a>.
+            </p>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <div data-component="site-footer"></div>
+  </body>
+</html>
