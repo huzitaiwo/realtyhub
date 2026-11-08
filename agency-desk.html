@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agency Desk — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/listings.css" />
+    <link rel="stylesheet" href="css/agent.css" />
+    <link rel="stylesheet" href="css/agency.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/agency.js" defer></script>
+  </head>
+
+  <body
+    class="desk"
+    data-page="desk"
+    data-desk="overview"
+    data-desk-area="agency"
+  >
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main" data-agency>
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Agency desk</p>
+            <h1 class="desk-head__title">Your agency.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <dl class="stat-band" aria-label="Agency summary">
+          <div class="stat">
+            <dt>Team members</dt>
+            <dd class="stat__value" data-stat="team">00</dd>
+            <dd class="stat__note" data-stat-note="team">Including you</dd>
+          </div>
+          <div class="stat">
+            <dt>Active listings</dt>
+            <dd class="stat__value" data-stat="active">00</dd>
+            <dd class="stat__note">Live on REALTY</dd>
+          </div>
+          <div class="stat">
+            <dt>Leads</dt>
+            <dd class="stat__value" data-stat="leads">00</dd>
+            <dd class="stat__note">Across the agency</dd>
+          </div>
+          <div class="stat">
+            <dt>Total views</dt>
+            <dd class="stat__value" data-stat="views">0</dd>
+            <dd class="stat__note">Demo figures</dd>
+          </div>
+        </dl>
+
+        <div class="agency-stack">
+          <!-- Team -->
+          <section class="panel" id="team" aria-labelledby="team-title">
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Your people</p>
+                <h2 class="panel__title" id="team-title">Team members</h2>
+              </div>
+              <button class="btn btn--dark btn--sm" type="button" data-invite>
+                Invite agent
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-plus"></use>
+                </svg>
+              </button>
+            </header>
+
+            <div
+              class="table-scroll"
+              tabindex="0"
+              role="region"
+              aria-label="Team table, scrollable"
+            >
+              <table class="data-table">
+                <caption class="visually-hidden">
+                  Team members
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Member</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Listings</th>
+                    <th scope="col">
+                      <span class="visually-hidden">Actions</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody data-team-body></tbody>
+              </table>
+            </div>
+            <p class="compare-note">
+              Invitations are a front-end concept in this demo. Real invitations
+              will be sent through Firebase later.
+            </p>
+          </section>
+
+          <!-- Listings -->
+          <section
+            class="panel"
+            id="agency-listings"
+            aria-labelledby="al-title"
+          >
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Inventory</p>
+                <h2 class="panel__title" id="al-title">Agency listings</h2>
+              </div>
+              <a class="link-arrow" href="properties.html">Manage listings</a>
+            </header>
+
+            <div
+              class="table-scroll"
+              tabindex="0"
+              role="region"
+              aria-label="Listings table, scrollable"
+            >
+              <table class="data-table">
+                <caption class="visually-hidden">
+                  Agency listings and who is responsible for them
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Home</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Views</th>
+                    <th scope="col">Leads</th>
+                    <th scope="col">Assigned to</th>
+                  </tr>
+                </thead>
+                <tbody data-agency-listings></tbody>
+              </table>
+            </div>
+            <p class="panel__empty" data-al-empty hidden>
+              No listings yet. Create one from List a home.
+            </p>
+          </section>
+
+          <!-- Branding + preview -->
+          <div class="desk-grid" id="branding">
+            <section class="panel" aria-labelledby="brand-title">
+              <header class="panel__head">
+                <div>
+                  <p class="panel__kicker">Branding</p>
+                  <h2 class="panel__title" id="brand-title">Agency profile</h2>
+                </div>
+                <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                  <use href="#i-building"></use>
+                </svg>
+              </header>
+
+              <form class="agency-form" data-brand-form novalidate>
+                <div class="form-grid">
+                  <div class="field span-2">
+                    <span class="field__label">Logo</span>
+                    <div class="logo-picker">
+                      <span
+                        class="logo-picker__preview"
+                        data-logo-preview
+                        aria-hidden="true"
+                        >A</span
+                      >
+                      <label class="btn btn--outline btn--sm">
+                        <input
+                          class="visually-hidden"
+                          type="file"
+                          accept="image/*"
+                          data-logo-file
+                        />
+                        Upload logo
+                      </label>
+                      <button
+                        class="text-btn"
+                        type="button"
+                        data-logo-remove
+                        hidden
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+
+                  <label class="field span-2"
+                    ><span class="field__label">Agency name</span>
+                    <input
+                      class="input"
+                      name="name"
+                      type="text"
+                      maxlength="60"
+                      required />
+                    <span class="field__error" data-error role="alert"></span
+                  ></label>
+                  <label class="field span-2"
+                    ><span class="field__label">Tagline</span>
+                    <input
+                      class="input"
+                      name="tagline"
+                      type="text"
+                      maxlength="90"
+                      placeholder="One line about how you work"
+                  /></label>
+                  <label class="field span-2"
+                    ><span class="field__label">About</span>
+                    <textarea
+                      class="input"
+                      name="about"
+                      rows="4"
+                      maxlength="500"
+                      placeholder="Tell visitors about your agency."
+                    ></textarea>
+                  </label>
+                  <label class="field span-2"
+                    ><span class="field__label">Location</span>
+                    <input
+                      class="input"
+                      name="location"
+                      type="text"
+                      maxlength="80"
+                  /></label>
+                  <label class="field"
+                    ><span class="field__label">Contact email</span>
+                    <input
+                      class="input"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                  /></label>
+                  <label class="field"
+                    ><span class="field__label">Contact phone</span>
+                    <input
+                      class="input"
+                      name="phone"
+                      type="tel"
+                      autocomplete="tel"
+                  /></label>
+
+                  <fieldset class="field span-2 sched__group">
+                    <legend class="field__label">Brand colour</legend>
+                    <div class="swatches" data-swatches></div>
+                  </fieldset>
+                </div>
+
+                <div class="form-actions form-actions--start">
+                  <button class="btn btn--dark" type="submit">
+                    Save agency profile
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-check"></use>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </section>
+
+            <section class="panel" aria-labelledby="preview-title">
+              <header class="panel__head">
+                <div>
+                  <p class="panel__kicker">How visitors see you</p>
+                  <h2 class="panel__title" id="preview-title">Preview</h2>
+                </div>
+              </header>
+
+              <article
+                class="agency-preview"
+                data-preview
+                aria-label="Agency profile preview"
+              ></article>
+
+              <div class="verify" data-verify></div>
+            </section>
+          </div>
+
+          <!-- Settings -->
+          <section
+            class="panel"
+            id="agency-settings"
+            aria-labelledby="as-title"
+          >
+            <header class="panel__head">
+              <div>
+                <p class="panel__kicker">Settings</p>
+                <h2 class="panel__title" id="as-title">
+                  How leads are handled
+                </h2>
+              </div>
+              <svg class="icon icon--brand panel__icon" aria-hidden="true">
+                <use href="#i-settings"></use>
+              </svg>
+            </header>
+
+            <div class="form-grid">
+              <label class="field"
+                ><span class="field__label">Lead routing</span>
+                <select class="input" data-setting="routing">
+                  <option value="owner">Owner receives every lead</option>
+                  <option value="round-robin">
+                    Share leads across agents in turn
+                  </option>
+                  <option value="manual">Assign leads manually</option>
+                </select></label
+              >
+              <div class="field">
+                <span class="field__label">Notifications</span>
+                <label class="switch">
+                  <input
+                    class="visually-hidden"
+                    type="checkbox"
+                    data-setting="notifyLeads"
+                  />
+                  <span class="switch__track" aria-hidden="true"></span>
+                  <span class="switch__label"
+                    >Tell me when a new lead arrives</span
+                  >
+                </label>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -24,14 +24,28 @@
     ? window.RealtyUI.getObject("realty:profile", {})
     : {};
   const name = (profile.name || "").trim() || "Handsome";
-  const isAgent = document.body.dataset.deskArea === "agent";
+
+  const area = document.body.dataset.deskArea || "user";
+  const isAgent = area === "agent";
+  const isAgency = area === "agency";
+  const deskLabel = isAgency
+    ? "Agency Desk"
+    : isAgent
+      ? "Agent Desk"
+      : "My Desk";
+
   const USER = {
     name,
     safe: esc(name),
     initial: esc(name.charAt(0).toUpperCase()),
-    note: isAgent ? "Agent workspace" : "Personal workspace",
+    note: isAgency
+      ? "Agency workspace"
+      : isAgent
+        ? "Agent workspace"
+        : "Personal workspace",
   };
 
+  /* ---------- My Desk (user) ---------- */
   const NAV = [
     ["overview", "Overview", "grid", "desk.html"],
     ["saved-properties", "Saved properties", "heart", "saved-properties.html"],
@@ -47,6 +61,7 @@
     ["notifications", "Notifications", "bell", "notifications.html"],
   ];
 
+  /* ---------- Agent Desk ---------- */
   const AGENT_NAV = [
     ["overview", "Overview", "grid", "agent-desk.html"],
     ["listings", "Listings", "home", "properties.html"],
@@ -58,8 +73,23 @@
     ["mydesk", "My Desk", "user", "desk.html"],
     ["notifications", "Notifications", "bell", "notifications.html"],
   ];
-  const NAV_ITEMS = isAgent ? AGENT_NAV : NAV;
-  const FOOT_ITEMS = isAgent ? AGENT_FOOT : FOOT;
+
+  /* ---------- Agency Desk ---------- */
+  const AGENCY_NAV = [
+    ["overview", "Overview", "grid", "agency-desk.html"],
+    ["team", "Team", "users", "agency-desk.html#team"],
+    ["listings", "Listings", "home", "agency-desk.html#agency-listings"],
+    ["branding", "Branding", "building", "agency-desk.html#branding"],
+    ["settings", "Settings", "settings", "agency-desk.html#agency-settings"],
+  ];
+  const AGENCY_FOOT = [
+    ["agent", "Agent Desk", "chart", "agent-desk.html"],
+    ["mydesk", "My Desk", "user", "desk.html"],
+    ["notifications", "Notifications", "bell", "notifications.html"],
+  ];
+
+  const NAV_ITEMS = isAgency ? AGENCY_NAV : isAgent ? AGENT_NAV : NAV;
+  const FOOT_ITEMS = isAgency ? AGENCY_FOOT : isAgent ? AGENT_FOOT : FOOT;
 
   const current = document.body.dataset.desk || "";
   const icon = (n) =>
@@ -88,7 +118,7 @@
   const userHTML = `
 <div class="user-chip">
   <span class="user-chip__avatar" aria-hidden="true">${USER.initial}</span>
-  <span class="user-chip__text"><strong>${USER.name}</strong> to <strong>${USER.safe}</strong><span>${USER.note}</span></span>
+  <span class="user-chip__text"><strong>${USER.safe}</strong><span>${USER.note}</span></span>
 </div>`;
 
   const sidebarSlot = document.querySelector('[data-component="desk-sidebar"]');

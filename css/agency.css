@@ -1,0 +1,259 @@
+/* ==========================================================================
+   REALTY — css/agency.css
+   Agency Desk only: team cells · logo picker · swatches · profile preview ·
+   verification. Tables, panels and stats come from desk.css / listings.css.
+   ========================================================================== */
+
+.agency-stack {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.75rem;
+}
+.agency-stack > .desk-grid {
+  margin-top: 0;
+}
+.agency-stack .compare-note {
+  margin-top: 1rem;
+}
+.agency-stack .panel {
+  scroll-margin-top: 1.5rem;
+}
+
+/* ---------- Team ---------- */
+.member {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 13rem;
+}
+.member__avatar {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--c-ink);
+  color: var(--c-on-dark);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+.member div {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.member strong {
+  font-size: 0.8rem;
+}
+.member span:not(.member__avatar) {
+  font-size: 0.66rem;
+  color: var(--c-ink-muted);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Branding form ---------- */
+.agency-form .form-grid {
+  margin-top: 0;
+}
+.form-actions--start {
+  grid-column: auto;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+  padding-top: 0;
+}
+
+.logo-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+}
+.logo-picker__preview {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  background: var(--c-surface-hover);
+  border: 1px solid var(--c-line);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+}
+.logo-picker__preview img,
+.agency-preview__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo-picker .btn {
+  cursor: pointer;
+}
+.logo-picker label:focus-within {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 3px;
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.swatch span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--c-line);
+  background: var(--c-surface);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.3s var(--ease),
+    background-color 0.3s var(--ease);
+}
+.swatch i {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: var(--swatch);
+}
+.swatch:hover span {
+  border-color: var(--c-ink);
+}
+.swatch input:checked + span {
+  border-color: var(--c-ink);
+  box-shadow: inset 0 0 0 1px var(--c-ink);
+}
+.swatch input:focus-visible + span {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Profile preview ---------- */
+.agency-preview {
+  --agency: var(--c-brand);
+  overflow: hidden;
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+}
+.agency-preview__banner {
+  height: 5.5rem;
+  background: var(--agency);
+  transition: background-color 0.4s var(--ease);
+}
+.agency-preview__body {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0 1.25rem 1.25rem;
+}
+.agency-preview__logo {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-top: -2.25rem;
+  overflow: hidden;
+  background: var(--c-surface);
+  border: 3px solid var(--c-bg);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--agency);
+}
+.agency-preview__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+.agency-preview__name .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-body);
+  color: var(--c-success);
+}
+.agency-preview__tagline {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--agency);
+}
+.agency-preview__loc {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--c-ink-muted);
+}
+.agency-preview__loc .icon {
+  color: var(--agency);
+}
+.agency-preview__about {
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--c-ink-soft);
+  overflow-wrap: anywhere;
+}
+.agency-preview__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0.4rem 0 0;
+  border-block: 1px solid var(--c-line);
+}
+.agency-preview__stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.2rem;
+  padding: 0.8rem 0;
+}
+.agency-preview__stats div + div {
+  padding-left: 1rem;
+  border-left: 1px solid var(--c-line);
+}
+.agency-preview__stats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.agency-preview__stats dt {
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-ink-muted);
+}
+.agency-preview__contact {
+  font-size: 0.7rem;
+  color: var(--c-ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.verify {
+  margin-top: 1rem;
+}
+.verify p {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--c-ink-muted);
+}
+.verify strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--c-ink);
+}
+.verify .btn {
+  margin-top: 0.9rem;
+}
+
+@media (max-width: 40em) {
+  .swatch span {
+    padding: 0.5rem 0.7rem;
+  }
+}
