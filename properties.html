@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>List a home — REALTY</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#14231f" />
+
+    <link rel="icon" type="image/png" href="assets/icons/realtyhub.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/desk.css" />
+    <link rel="stylesheet" href="css/account.css" />
+    <link rel="stylesheet" href="css/listings.css" />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="js/components.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/desk.js" defer></script>
+    <script src="js/listings.js" defer></script>
+  </head>
+
+  <body
+    class="desk"
+    data-page="desk"
+    data-desk="listings"
+    data-desk-area="agent"
+  >
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="desk-shell">
+      <div data-component="desk-sidebar"></div>
+
+      <main class="desk-main" id="main">
+        <header class="desk-head">
+          <div>
+            <p class="eyebrow eyebrow--mark">Agent desk / Listings</p>
+            <h1 class="desk-head__title">List a home.</h1>
+          </div>
+          <div data-component="desk-user"></div>
+        </header>
+
+        <section class="panel intro-panel" aria-labelledby="intro-title">
+          <div>
+            <p class="panel__kicker">Your listings</p>
+            <h2 class="panel__title" id="intro-title">
+              Give every home a clearer stage.
+            </h2>
+            <p class="lead">
+              Add the details, upload photos and choose when to publish. You can
+              edit a listing or change its status at any time.
+            </p>
+          </div>
+          <button class="btn btn--dark" type="button" data-new-listing>
+            New listing
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-plus"></use>
+            </svg>
+          </button>
+        </section>
+
+        <dl class="stat-band">
+          <div class="stat">
+            <dt>Active listings</dt>
+            <dd class="stat__value" data-stat="active">00</dd>
+            <dd class="stat__note">Live on REALTY</dd>
+          </div>
+          <div class="stat">
+            <dt>Total views</dt>
+            <dd class="stat__value" data-stat="views">0</dd>
+            <dd class="stat__note">Demo figures</dd>
+          </div>
+          <div class="stat">
+            <dt>Leads</dt>
+            <dd class="stat__value" data-stat="leads">00</dd>
+            <dd class="stat__note">Enquiries received</dd>
+          </div>
+          <div class="stat">
+            <dt>Under offer</dt>
+            <dd class="stat__value" data-stat="offers">00</dd>
+            <dd class="stat__note">Awaiting completion</dd>
+          </div>
+        </dl>
+
+        <div class="tab-strip listing-filter" data-listing-filter>
+          <fieldset class="tabs">
+            <legend class="visually-hidden">Filter listings by status</legend>
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="all"
+                checked
+              /><span>All</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="active"
+              /><span>Active</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="draft"
+              /><span>Draft</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="under-offer"
+              /><span>Under offer</span></label
+            >
+            <label class="tabs__tab"
+              ><input
+                class="visually-hidden"
+                type="radio"
+                name="status"
+                value="closed"
+              /><span>Sold / let</span></label
+            >
+          </fieldset>
+        </div>
+
+        <p
+          class="desk-toolbar__count desk-toolbar__count--spaced"
+          data-listing-count
+          aria-live="polite"
+        >
+          0 listings
+        </p>
+
+        <div
+          class="table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Listings table, scrollable"
+        >
+          <table class="data-table">
+            <caption class="visually-hidden">
+              Your listings
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Home</th>
+                <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+                <th scope="col">Views</th>
+                <th scope="col">Leads</th>
+                <th scope="col">Updated</th>
+                <th scope="col">
+                  <span class="visually-hidden">Actions</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody data-listing-body></tbody>
+          </table>
+        </div>
+
+        <div class="empty-state" data-listing-empty hidden>
+          <h2 class="empty-state__title">No listings here yet.</h2>
+          <p>Create your first listing and it will appear in this table.</p>
+          <button class="btn btn--dark btn--sm" type="button" data-new-listing>
+            New listing
+          </button>
+        </div>
+
+        <p class="compare-note">
+          Listings and figures are a front-end concept in this demo and stay on
+          this device. Uploaded photos are resized and stored in your browser;
+          real image storage will use Firebase later.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>

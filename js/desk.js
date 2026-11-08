@@ -24,11 +24,12 @@
     ? window.RealtyUI.getObject("realty:profile", {})
     : {};
   const name = (profile.name || "").trim() || "Handsome";
+  const isAgent = document.body.dataset.deskArea === "agent";
   const USER = {
     name,
     safe: esc(name),
     initial: esc(name.charAt(0).toUpperCase()),
-    note: "Personal workspace",
+    note: isAgent ? "Agent workspace" : "Personal workspace",
   };
 
   const NAV = [
@@ -46,6 +47,20 @@
     ["notifications", "Notifications", "bell", "notifications.html"],
   ];
 
+  const AGENT_NAV = [
+    ["overview", "Overview", "grid", "agent-desk.html"],
+    ["listings", "Listings", "home", "properties.html"],
+    ["leads", "Leads", "users", "agent-desk.html#leads"],
+    ["viewings", "Viewings", "calendar", "agent-desk.html#viewings"],
+    ["analytics", "Analytics", "chart", "agent-desk.html#analytics"],
+  ];
+  const AGENT_FOOT = [
+    ["mydesk", "My Desk", "user", "desk.html"],
+    ["notifications", "Notifications", "bell", "notifications.html"],
+  ];
+  const NAV_ITEMS = isAgent ? AGENT_NAV : NAV;
+  const FOOT_ITEMS = isAgent ? AGENT_FOOT : FOOT;
+
   const current = document.body.dataset.desk || "";
   const icon = (n) =>
     `<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-${n}"></use></svg>`;
@@ -59,13 +74,13 @@
   <a class="logo" href="index.html" aria-label="REALTY home">${mark}<span class="logo__word">REALTY</span></a>
   <button class="burger" type="button" aria-expanded="false" aria-controls="desk-sidebar" aria-label="Open desk menu"><span></span><span></span></button>
 </header>
-<aside class="desk-sidebar" id="desk-sidebar" aria-label="My Desk">
+<aside class="desk-sidebar" id="desk-sidebar"aria-label="${isAgent ? "Agent Desk" : "My Desk"}">
   <a class="logo logo--light" href="index.html" aria-label="REALTY home">${mark}<span class="logo__word">REALTY</span></a>
   <nav aria-label="Desk navigation">
-    <ul class="desk-nav">${NAV.map(link).join("")}</ul>
+    <ul class="desk-nav">${NAV_ITEMS.map(link).join("")}</ul>
   </nav>
   <nav class="desk-nav--foot" aria-label="Desk notifications">
-    <ul class="desk-nav">${FOOT.map(link).join("")}</ul>
+    <ul class="desk-nav">${FOOT_ITEMS.map(link).join("")}</ul>
   </nav>
 </aside>
 <div class="desk-scrim"></div>`;

@@ -89,17 +89,31 @@
     ["amenities", "Amenities"],
   ];
 
-  const photosP = Promise.all(
-    CATS.map(async ([key, label]) => {
-      const src =
-        key === "exterior"
-          ? p.image
-          : `assets/images/gallery/${p.id}-${key}.jpg`;
-      return key === "exterior" || (await probe(src))
-        ? { key, label, src, alt: `${label} — ${p.name}` }
-        : null;
-    }),
-  ).then((a) => a.filter(Boolean));
+  const customPhotos =
+    Array.isArray(p.photos) && p.photos.length ? p.photos : null;
+  const photosP = customPhotos
+    ? Promise.resolve(
+        customPhotos.map((src, i) => {
+          const label = i === 0 ? "Exterior" : `Photo ${i + 1}`;
+          return {
+            key: i === 0 ? "exterior" : `photo-${i}`,
+            label,
+            src,
+            alt: `${label} — ${p.name}`,
+          };
+        }),
+      )
+    : Promise.all(
+        CATS.map(async ([key, label]) => {
+          const src =
+            key === "exterior"
+              ? p.image
+              : `assets/images/gallery/${p.id}-${key}.jpg`;
+          return key === "exterior" || (await probe(src))
+            ? { key, label, src, alt: `${label} — ${p.name}` }
+            : null;
+        }),
+      ).then((a) => a.filter(Boolean));
 
   const plansP = Promise.all(
     [1, 2].map(async (n) => {

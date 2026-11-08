@@ -54,15 +54,6 @@ body[data-desk="compare"] .compare-tray {
   vertical-align: middle;
 }
 
-.table-scroll {
-  overflow-x: auto;
-  background: var(--c-surface);
-  border: 1px solid var(--c-line);
-}
-.table-scroll:focus-visible {
-  outline-offset: -2px;
-}
-
 .compare-table {
   width: 100%;
   min-width: 44rem;

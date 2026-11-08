@@ -151,6 +151,23 @@ window.RealtyData = (() => {
     },
   ];
 
+  /* ---------- Agent-created or edited listings (js/listings.js) ---------- */
+  try {
+    const custom = JSON.parse(localStorage.getItem("realty:custom-listings"));
+    if (Array.isArray(custom)) {
+      custom.forEach((c) => {
+        const i = PROPERTIES.findIndex((x) => x.id === c.id);
+        if (i === -1 && c.listingStatus === "draft")
+          return; /* drafts stay private */
+        const rec = { ...c, listed: c.listed || 0, features: c.features || [] };
+        if (i > -1) PROPERTIES[i] = rec;
+        else PROPERTIES.push(rec);
+      });
+    }
+  } catch {
+    /* storage unavailable */
+  }
+
   const byId = Object.fromEntries(PROPERTIES.map((p) => [p.id, p]));
 
   /* ---------- Formatting ---------- */
@@ -302,6 +319,11 @@ window.RealtyData = (() => {
 
   /* Descriptions are generated only from the demo data above */
   const describe = (p) => {
+    if (p.description)
+      return p.description
+        .split(/\n+/)
+        .map((s) => s.trim())
+        .filter(Boolean);
     const type = p.type.toLowerCase();
     const article = /^[aeiou]/.test(type) ? "An" : "A";
     const rooms =

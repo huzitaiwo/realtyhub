@@ -1514,3 +1514,12 @@ textarea.input {
   border-color: var(--c-brand);
   color: #fff;
 }
+
+.table-scroll {
+  overflow-x: auto;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+}
+.table-scroll:focus-visible {
+  outline-offset: -2px;
+}
